@@ -1,0 +1,37 @@
+- **[ ] OnBoarding Screen need simple fixes**
+- **[ ] Authentication Screens**
+  - Implement login, register, OTP verification, reset password
+  - Connect with API (if available)
+- **[ ] Home Screen**
+  - Show key user info and quick links to core features
+- **[ ] Navigation Bar (BottomNav)**
+  - Contains 5 main tabs (e.g., Home, كفالة, News, History, Profile)
+- **[ ] برنامج الكفالة**
+  - Add any related static/dynamic UI with interaction
+- **[ ] كفالة يتيم**
+  - Form with 12 text fields and 2 dropdowns
+  - Validation and submit via API
+- **[ ] History Screen**
+  - Show user’s previous actions/sponsorships (from API)
+- **[ ] الكفالة Screen**
+  - Show list of suggested families/kids for sponsorship
+- **[ ] Kid Information Screen**
+  - Detailed view of selected child (e.g., name, age, background)
+- **[ ] News Screen**
+  - Scrollable list of tappable items
+  - Each expands or routes to detailed screen
+- **[ ] News Details Screen**
+  - Show full news/report content
+- **[ ] Profile Screen**
+  - Sections:
+    - User Info
+    - Settings: Notifications, Localization toggle
+    - Technical Support
+    - Terms and Conditions
+- **[ ] Technical Support Screen**
+  - View past support tickets (tokens)
+  - Button to open "Create Token" screen
+- **[ ] Terms and Conditions**
+  - Static scrollable text or fetched from API
+- **[ ] Notification Screen**
+  - List of recent notifications (optional mark as read)
