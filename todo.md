@@ -1,3 +1,4 @@
+- **[ ] OnBoarding Screen need simple fixes**
 - **[ ] Authentication Screens**
   - Implement login, register, OTP verification, reset password
   - Connect with API (if available)
