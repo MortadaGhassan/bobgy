@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyTheme {
   static const Color kBackgroundColor = Color(0xFFFFFFFF);
   static const Color kPrimaryColor = Color(0xFF41A2D8);
   static const Color kErrorColor = Color(0xFFFF0C0C);
   static const Color kSuccessColor = Color(0xFF04FF00);
-  static const Color kTextColor = Color(0xFF000000); // Fixed
+  static const Color kTextColor = Color(0xFF000000);
   static const Color kCardColor = Color(0xFF2A2A2A);
+  static const Color kFillColor = Color(0xfff7f9fc);
 
   static final ThemeData customTheme = ThemeData(
     brightness: Brightness.light,
@@ -18,7 +18,7 @@ class MyTheme {
       onPrimary: Colors.white,
       secondary: kSuccessColor,
       onSecondary: Colors.white,
-      surface: kBackgroundColor,
+      surface: kFillColor,
       onSurface: kTextColor,
       error: kErrorColor,
       onError: Colors.white,
@@ -28,7 +28,13 @@ class MyTheme {
     iconTheme: const IconThemeData(color: kTextColor),
     textTheme: const TextTheme(
       bodyLarge: TextStyle(color: kTextColor, fontFamily: 'Cairo'),
-      bodyMedium: TextStyle(color: kTextColor, fontFamily: 'Cairo'),
+      bodyMedium: TextStyle(
+        fontWeight: FontWeight.w400,
+
+        color: kTextColor,
+        fontFamily: 'Cairo',
+        fontSize: 16,
+      ),
       labelLarge: TextStyle(
         fontSize: 24,
         fontWeight: FontWeight.w700,
@@ -63,7 +69,7 @@ class MyTheme {
     inputDecorationTheme: InputDecorationTheme(
       iconColor: kPrimaryColor,
       filled: true,
-      fillColor: Colors.white,
+      fillColor: kFillColor,
       hintStyle: const TextStyle(color: kTextColor),
       labelStyle: const TextStyle(color: kTextColor),
       border: OutlineInputBorder(
@@ -72,7 +78,7 @@ class MyTheme {
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(30),
-        borderSide: const BorderSide(color: kPrimaryColor),
+        borderSide: const BorderSide(color: kBackgroundColor),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(30),
