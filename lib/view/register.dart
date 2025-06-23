@@ -11,8 +11,11 @@ class AuthScreen extends StatefulWidget {
 }
 
 class _AuthScreenState extends State<AuthScreen> {
+  final TextEditingController numberController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
+
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController repasswordController = TextEditingController();
   bool isLoading = false;
   @override
   Widget build(BuildContext context) {
@@ -25,13 +28,16 @@ class _AuthScreenState extends State<AuthScreen> {
             Text(
               'انشاء حساب',
               textDirection: TextDirection.rtl,
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 36, fontWeight: FontWeight.w700),
             ),
+            SizedBox(height: 12),
+
             Text(
               ' ساهم معنا في بناء غدٍ مشرق للأيتام والمحتاجين',
               textDirection: TextDirection.rtl,
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
             ),
+            SizedBox(height: 54),
             TextField(
               controller: emailController,
               decoration: InputDecoration(
@@ -45,7 +51,7 @@ class _AuthScreenState extends State<AuthScreen> {
             ),
             SizedBox(height: 16),
             TextField(
-              controller: emailController,
+              controller: numberController,
               keyboardType: TextInputType.numberWithOptions(),
               decoration: InputDecoration(
                 suffixIcon: HugeIcon(
@@ -72,7 +78,7 @@ class _AuthScreenState extends State<AuthScreen> {
             ),
             const SizedBox(height: 20),
             TextField(
-              controller: passwordController,
+              controller: repasswordController,
               obscureText: true,
               decoration: InputDecoration(
                 hintTextDirection: TextDirection.rtl,
@@ -91,6 +97,35 @@ class _AuthScreenState extends State<AuthScreen> {
                   onPressed: () {},
                   child: const Text("تسجيل الدخول"),
                 ),
+            SizedBox(height: 16),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Divider(
+                    color: Color(0xffcce5f4),
+                    thickness: 1,
+                    height: 20,
+                    indent: 16,
+                    endIndent: 16,
+                  ),
+                ),
+
+                Text('او', style: TextStyle(color: Color(0xffcce5f4))),
+                Expanded(
+                  child: Divider(
+                    color: Color(0xffcce5f4),
+                    thickness: 1,
+                    height: 20,
+                    indent: 16,
+                    endIndent: 16,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 16),
+
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -102,7 +137,9 @@ class _AuthScreenState extends State<AuthScreen> {
                   },
                   child: Text(
                     'تسجيل الدخول',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: context.colorScheme.primary,
+                    ),
                   ),
                 ),
                 Text('لديك حساب بالفعل؟'),

@@ -18,6 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.colorScheme.surface,
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 15, vertical: 200),
         child: Column(
@@ -26,13 +27,17 @@ class _LoginScreenState extends State<LoginScreen> {
             Text(
               'تسجيل الدخول',
               textDirection: TextDirection.rtl,
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 36, fontWeight: FontWeight.w700),
             ),
+            SizedBox(height: 12),
+
             Text(
               ' ساهم معنا في بناء غدٍ مشرق للأيتام والمحتاجين',
               textDirection: TextDirection.rtl,
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
             ),
+            SizedBox(height: 54),
+
             TextField(
               controller: emailController,
               keyboardType: TextInputType.numberWithOptions(),
@@ -45,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 hintText: 'رقم الهاتف',
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 16),
             TextField(
               controller: passwordController,
               obscureText: true,
@@ -59,13 +64,41 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 16),
             isLoading
                 ? const CircularProgressIndicator()
                 : ElevatedButton(
                   onPressed: () {},
                   child: const Text("تسجيل الدخول"),
                 ),
+            SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Divider(
+                    color: Color(0xffcce5f4),
+                    thickness: 1,
+                    height: 20,
+                    indent: 16,
+                    endIndent: 16,
+                  ),
+                ),
+
+                Text('او', style: TextStyle(color: Color(0xffcce5f4))),
+                Expanded(
+                  child: Divider(
+                    color: Color(0xffcce5f4),
+                    thickness: 1,
+                    height: 20,
+                    indent: 16,
+                    endIndent: 16,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 24),
+
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -77,7 +110,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                   child: Text(
                     'انشاء حساب',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: context.colorScheme.primary,
+                    ),
                   ),
                 ),
                 Text('ليس لديك حساب؟'),
