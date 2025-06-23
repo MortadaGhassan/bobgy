@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyTheme {
   static const Color kBackgroundColor = Color(0xFFFFFFFF);
@@ -28,7 +29,18 @@ class MyTheme {
     textTheme: const TextTheme(
       bodyLarge: TextStyle(color: kTextColor, fontFamily: 'Cairo'),
       bodyMedium: TextStyle(color: kTextColor, fontFamily: 'Cairo'),
-      labelLarge: TextStyle(color: kTextColor, fontFamily: 'Cairo'),
+      labelLarge: TextStyle(
+        fontSize: 24,
+        fontWeight: FontWeight.w700,
+        color: Colors.white,
+        fontFamily: 'Cairo',
+      ),
+      labelMedium: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w500,
+        color: Colors.white,
+        fontFamily: 'Cairo',
+      ),
     ),
     appBarTheme: const AppBarTheme(
       backgroundColor: kPrimaryColor,

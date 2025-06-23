@@ -1,3 +1,4 @@
+import 'package:algad_almushriq/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -47,11 +48,7 @@ class OnboardingPage extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: Text(
                   heading,
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white,
-                  ),
+                  style: Theme.of(context).textTheme.labelLarge,
                   textDirection: TextDirection.rtl,
                 ),
               ),

@@ -1,5 +1,5 @@
 import 'package:algad_almushriq/theme/theme.dart';
-import 'package:algad_almushriq/widget/option_card.dart';
+import 'package:algad_almushriq/widgets/option_card.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 

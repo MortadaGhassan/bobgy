@@ -1,5 +1,6 @@
 import 'package:algad_almushriq/theme/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hugeicons/hugeicons.dart';
 
 class AuthScreen extends StatefulWidget {
@@ -97,6 +98,7 @@ class _AuthScreenState extends State<AuthScreen> {
                 TextButton(
                   onPressed: () {
                     isLoading = false;
+                    context.pop();
                   },
                   child: Text(
                     'تسجيل الدخول',

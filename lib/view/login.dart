@@ -1,5 +1,7 @@
+import 'package:algad_almushriq/router/route_names.dart';
 import 'package:algad_almushriq/theme/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hugeicons/hugeicons.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -71,6 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 TextButton(
                   onPressed: () {
                     isLoading = false;
+                    context.pushNamed(RouteNames.authScreen);
                   },
                   child: Text(
                     'انشاء حساب',

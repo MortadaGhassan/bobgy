@@ -1,4 +1,5 @@
 import 'package:algad_almushriq/router/app_routes.dart';
+import 'package:algad_almushriq/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -13,6 +14,7 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final router = AppRoutes.createRouter(ref);
     return MaterialApp.router(
+      theme: MyTheme.customTheme,
       debugShowCheckedModeBanner: false,
       routerConfig: router,
     );

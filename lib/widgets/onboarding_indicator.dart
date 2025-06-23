@@ -1,6 +1,8 @@
 import 'package:algad_almushriq/providers/onboarding_provider.dart';
+import 'package:algad_almushriq/router/route_names.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../providers/onboarding_conter_provider.dart';
 
@@ -92,6 +94,7 @@ class OnboardingIndicator extends StatelessWidget {
                   ref
                       .read(onboardingNotifierProvider.notifier)
                       .completeOnboarding();
+                  context.goNamed(RouteNames.logInScreen);
                 },
                 style: OutlinedButton.styleFrom(
                   side: BorderSide(color: Colors.white),
