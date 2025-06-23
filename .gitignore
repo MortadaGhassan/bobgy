@@ -54,8 +54,8 @@ app.*.map.json
 
 # Generated Files
 **/generated_plugin_registrant.dart
-**/android/**/GeneratedPluginRegistrant.java
-**/ios/**/GeneratedPluginRegistrant.*
+*/android/*/GeneratedPluginRegistrant.java
+*/ios//GeneratedPluginRegistrant.
 **/ios/Flutter/flutter_assets/
 **/ios/Flutter/ephemeral
 
