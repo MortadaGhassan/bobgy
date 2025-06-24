@@ -7,4 +7,5 @@ class RouteNames {
   static final newsScreen = '/newsScreen';
   static final profileScreen = '/profileScreen';
   static final sponsorshipScreen = '/sponsorshipScreen';
+  static final termsConditionsScreen = '/termsCondetionsScreen';
 }
