@@ -1,6 +1,6 @@
-import 'dart:math';
-import 'package:algad_almushriq/providers/main_shell_provider.dart';
+// import 'package:algad_almushriq/providers/main_shell_provider.dart';
 import 'package:algad_almushriq/theme/theme.dart';
+import 'package:algad_almushriq/utlis/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -10,7 +10,7 @@ import '../router/route_names.dart';
 
 class MainShell extends ConsumerWidget {
   final Widget child;
-  MainShell({required this.child});
+  const MainShell({required this.child, super.key});
 
   int _getCurrentIndex(String location) {
     if (location.startsWith(RouteNames.sponsorshipScreen)) return 1;
@@ -22,7 +22,7 @@ class MainShell extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final mainShellIndicator = ref.watch(mainShellCounterProvider);
+    // final mainShellIndicator = ref.watch(mainShellCounterProvider);
     final location = GoRouterState.of(context).uri.toString();
     final currentIndex = _getCurrentIndex(location);
 
@@ -30,11 +30,11 @@ class MainShell extends ConsumerWidget {
       body: child,
       bottomNavigationBar: ClipRRect(
         borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(25),
-          topRight: Radius.circular(25),
+          topLeft: Radius.circular(15),
+          topRight: Radius.circular(15),
         ),
         child: BottomNavigationBar(
-          currentIndex: mainShellIndicator,
+          currentIndex: currentIndex,
           onTap: (index) {
             switch (index) {
               case 0:
@@ -54,53 +54,63 @@ class MainShell extends ConsumerWidget {
                 break;
             }
           },
-          showSelectedLabels: false,
+          selectedFontSize: SizeConfig.font11,
+          showSelectedLabels: true,
           showUnselectedLabels: false,
           type: BottomNavigationBarType.fixed,
-          selectedItemColor: Colors.white,
-          unselectedIconTheme: IconThemeData(
-            color: Theme.of(context).colorScheme.surface,
-          ),
-          selectedIconTheme: IconThemeData(
-            color: Theme.of(context).colorScheme.onPrimary,
-          ),
+          selectedItemColor: context.colorScheme.primary,
           elevation: 15,
-          backgroundColor: Theme.of(context).colorScheme.primary,
+          backgroundColor: Theme.of(context).colorScheme.surface,
           items: [
             BottomNavigationBarItem(
               icon: HugeIcon(
                 icon: HugeIcons.strokeRoundedHome03,
-                color: context.colorScheme.primary,
+                color:
+                    currentIndex == 0
+                        ? context.colorScheme.primary
+                        : context.colorScheme.shadow,
               ),
-              label: 'home',
+              label: 'الرئيسة',
             ),
             BottomNavigationBarItem(
               icon: HugeIcon(
                 icon: HugeIcons.strokeRoundedChart01,
-                color: context.colorScheme.primary,
+                color:
+                    currentIndex == 1
+                        ? context.colorScheme.primary
+                        : context.colorScheme.shadow,
               ),
-              label: 'transactions',
+              label: 'سجل الكفالة',
             ),
             BottomNavigationBarItem(
               icon: HugeIcon(
                 icon: HugeIcons.strokeRoundedStarAward01,
-                color: context.colorScheme.primary,
+                color:
+                    currentIndex == 2
+                        ? context.colorScheme.primary
+                        : context.colorScheme.shadow,
               ),
-              label: 'profile',
+              label: 'الكفالة',
             ),
             BottomNavigationBarItem(
               icon: HugeIcon(
                 icon: HugeIcons.strokeRoundedComputer,
-                color: context.colorScheme.primary,
+                color:
+                    currentIndex == 3
+                        ? context.colorScheme.primary
+                        : context.colorScheme.shadow,
               ),
-              label: 'admin',
+              label: 'الاخبار',
             ),
             BottomNavigationBarItem(
               icon: HugeIcon(
                 icon: HugeIcons.strokeRoundedUser,
-                color: context.colorScheme.primary,
+                color:
+                    currentIndex == 4
+                        ? context.colorScheme.primary
+                        : context.colorScheme.shadow,
               ),
-              label: 'home',
+              label: 'حسابي',
             ),
           ],
         ),
