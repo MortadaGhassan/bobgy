@@ -1,9 +1,10 @@
 import 'package:algad_almushriq/providers/onboarding_conter_provider.dart';
+import 'package:algad_almushriq/utlis/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../widgets/onboarding_indicator.dart';
-import '../widgets/onboarding_page.dart';
+import '../utlis/widgets/onboarding_indicator.dart';
+import '../utlis/widgets/onboarding_page.dart';
 
 class OnboardingScreen extends ConsumerStatefulWidget {
   const OnboardingScreen({super.key});
@@ -58,7 +59,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
               ),
             ],
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 2.40.h),
           OnboardingIndicator(
             onboardingCounter: onboardingCounter,
             pageController: _pageController,

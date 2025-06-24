@@ -1,7 +1,8 @@
 import 'package:algad_almushriq/theme/theme.dart';
-import 'package:algad_almushriq/widgets/option_card.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
+
+import '../utlis/widgets/option_card.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});

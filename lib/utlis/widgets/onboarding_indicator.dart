@@ -1,5 +1,6 @@
 import 'package:algad_almushriq/providers/onboarding_provider.dart';
 import 'package:algad_almushriq/router/route_names.dart';
+import 'package:algad_almushriq/utlis/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -27,12 +28,11 @@ class OnboardingIndicator extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(
-            height: 20,
+            height: 2.4.h,
             child: ListView.separated(
               itemBuilder:
                   (context, index) => Container(
-                    height: 9,
-                    width: 9,
+                    width: 1.2.h,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(
@@ -62,11 +62,11 @@ class OnboardingIndicator extends StatelessWidget {
               },
               icon: Icon(
                 Icons.arrow_back_rounded,
-                size: 32,
+                size: 8.33.w,
                 color: Colors.white,
               ),
             ),
-            SizedBox(width: 32),
+            SizedBox(width: 8.33.w),
           ],
           onboardingCounter != 2
               ? OutlinedButton(
@@ -81,11 +81,11 @@ class OnboardingIndicator extends StatelessWidget {
                   foregroundColor: Color(0xff41A2D8),
                   backgroundColor: Color(0x20FFFFFF),
                   alignment: Alignment.center,
-                  minimumSize: const Size(41, 41),
+                  minimumSize: Size(5.w, 5.h),
                   shape: CircleBorder(),
                   padding: EdgeInsets.all(11),
                 ),
-                child: Icon(Icons.arrow_forward_rounded, size: 32),
+                child: Icon(Icons.arrow_forward_rounded, size: 8.33.w),
               )
               : OutlinedButton(
                 onPressed: () {
@@ -99,7 +99,7 @@ class OnboardingIndicator extends StatelessWidget {
                   foregroundColor: Color(0xff41A2D8),
                   backgroundColor: Color(0x20FFFFFF),
                   alignment: Alignment.center,
-                  minimumSize: const Size(105, 40),
+                  minimumSize: Size(27.34.w, 4.81.h),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
@@ -107,7 +107,10 @@ class OnboardingIndicator extends StatelessWidget {
                 ),
                 child: Text(
                   'ابدا الان',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+                  style: TextStyle(
+                    fontSize: SizeConfig.font15,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
               ),
         ],

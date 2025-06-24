@@ -1,3 +1,4 @@
+import 'package:algad_almushriq/utlis/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -56,7 +57,7 @@ class OnboardingPage extends StatelessWidget {
                 child: Text(
                   content,
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: SizeConfig.font20,
                     fontWeight: FontWeight.w500,
                     color: Colors.white,
                   ),
