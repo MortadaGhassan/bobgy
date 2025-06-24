@@ -1,10 +1,143 @@
+import 'package:algad_almushriq/utlis/size_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import '../utlis/widgets/donation_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        toolbarHeight: 20.h,
+      ),
+      body: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            height: 30.h,
+            child: Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.black, Color(0xff41a2d8)],
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                ),
+              ),
+              child: Image.asset(
+                'assets/images/Vector2.png',
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Positioned(
+            top: 14.42.h,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.surface,
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(50),
+                  topLeft: Radius.circular(50),
+                ),
+              ),
+              height: 85.h,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(top: 30, left: 12, right: 12),
+                    child: Row(
+                      children: [
+                        DonationCard(
+                          image: 'assets/images/handGiveMoney.jpg',
+                          text: "تبرع الان",
+                        ),
+                        DonationCard(
+                          image:
+                              'assets/images/ebba5e482cd4ef3e56901fb3a137874c437ff6aa.jpg',
+                          text: "التبرع بالسلع",
+                        ),
+                        DonationCard(
+                          image:
+                              'assets/images/9f317d1244626535af22fa260b4f9486d6fa25de.jpg',
+                          text: "كفالة يتيم",
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(4),
+                    width: 91.6.w,
+                    height: 25.h,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/Vector2.png'),
+                        fit: BoxFit.cover,
+                      ),
+                      gradient: LinearGradient(
+                        colors: [Color(0xff104352), Color(0xff41a2d8)],
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                      ),
+                    ),
+                    child: Stack(
+                      clipBehavior: Clip.none,
+                      children: [
+                        Positioned(
+                          bottom: -17,
+                          top: 30,
+                          child: Image.asset(
+                            'assets/images/e51a5d717ff0bbb907a19131bb6236cb985cde44.png',
+                          ),
+                        ),
+                        Positioned(
+                          top: 15,
+                          right: 16,
+                          child: Text(
+                            'ٍساهم الان',
+                            textDirection: TextDirection.rtl,
+                            style: TextStyle(
+                              fontSize: SizeConfig.font20,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 56,
+                          right: 16,
+                          child: Text(
+                            'ساهم الآن في تغيير حياة الأيتام!\nتبرعك يضمن لهم مأوى دافئًا، وحياة مليئة\n بالأمل. كل مساهمة تحدث فرقًا كبيرً كن\n سببًا في إسعادهم اليوم .',
+                            textDirection: TextDirection.rtl,
+                            maxLines: 4,
+                            style: TextStyle(
+                              fontSize: SizeConfig.font14,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xffbfd6e1),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
