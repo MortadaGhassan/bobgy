@@ -13,10 +13,42 @@ class AuthScreen extends StatefulWidget {
 class _AuthScreenState extends State<AuthScreen> {
   final TextEditingController numberController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
-
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController repasswordController = TextEditingController();
+  final TextEditingController rePasswordController = TextEditingController();
   bool isLoading = false;
+  void registerUser() async {
+    if (numberController.text.isEmpty ||
+        emailController.text.isEmpty ||
+        passwordController.text.isEmpty ||
+        rePasswordController.text.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text(
+            "الرجاء ملئ كل الحقول ",
+            textDirection: TextDirection.rtl,
+          ),
+        ),
+      );
+      return;
+    }
+
+    if (passwordController.text != rePasswordController.text) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text(
+            "كلمة المرور غير مطابقة",
+            textDirection: TextDirection.rtl,
+          ),
+        ),
+      );
+      return;
+    }
+
+    setState(() => isLoading = true);
+
+    setState(() => isLoading = false);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,7 +110,7 @@ class _AuthScreenState extends State<AuthScreen> {
             ),
             const SizedBox(height: 20),
             TextField(
-              controller: repasswordController,
+              controller: rePasswordController,
               obscureText: true,
               decoration: InputDecoration(
                 hintTextDirection: TextDirection.rtl,
@@ -94,7 +126,9 @@ class _AuthScreenState extends State<AuthScreen> {
             isLoading
                 ? const CircularProgressIndicator()
                 : ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    registerUser();
+                  },
                   child: const Text("تسجيل الدخول"),
                 ),
             SizedBox(height: 16),
