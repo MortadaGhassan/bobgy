@@ -6,7 +6,9 @@ import 'package:algad_almushriq/view/login.dart';
 import 'package:algad_almushriq/view/main_shell.dart';
 import 'package:algad_almushriq/view/news_screen.dart';
 import 'package:algad_almushriq/view/onboarding_screen.dart';
+import 'package:algad_almushriq/view/profile_screen.dart';
 import 'package:algad_almushriq/view/register.dart';
+import 'package:algad_almushriq/view/sponsorship_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -40,12 +42,12 @@ class AppRoutes {
             GoRoute(
               name: RouteNames.profileScreen,
               path: '/profileScreen',
-              builder: ((context, state) => HomeScreen()),
+              builder: ((context, state) => ProfileScreen()),
             ),
             GoRoute(
               name: RouteNames.sponsorshipScreen,
               path: '/sponsorshipScreen',
-              builder: ((context, state) => HomeScreen()),
+              builder: ((context, state) => SponsorshipScreen()),
             ),
           ],
         ),

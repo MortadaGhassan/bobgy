@@ -68,7 +68,9 @@ class _LoginScreenState extends State<LoginScreen> {
             isLoading
                 ? const CircularProgressIndicator()
                 : ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.goNamed(RouteNames.homeScreen);
+                  },
                   child: const Text("تسجيل الدخول"),
                 ),
             SizedBox(height: 16),

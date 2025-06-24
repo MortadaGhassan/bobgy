@@ -1,16 +1,31 @@
 import 'dart:math';
 import 'package:algad_almushriq/providers/main_shell_provider.dart';
+import 'package:algad_almushriq/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hugeicons/hugeicons.dart';
+
+import '../router/route_names.dart';
 
 class MainShell extends ConsumerWidget {
   final Widget child;
   MainShell({required this.child});
 
+  int _getCurrentIndex(String location) {
+    if (location.startsWith(RouteNames.sponsorshipScreen)) return 1;
+    if (location.startsWith(RouteNames.donationScreen)) return 2;
+    if (location.startsWith(RouteNames.newsScreen)) return 3;
+    if (location.startsWith(RouteNames.profileScreen)) return 4;
+    return 0;
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final mainShellIndicator = ref.watch(mainShellCounterProvider);
+    final location = GoRouterState.of(context).uri.toString();
+    final currentIndex = _getCurrentIndex(location);
+
     return Scaffold(
       body: child,
       bottomNavigationBar: ClipRRect(
@@ -23,16 +38,19 @@ class MainShell extends ConsumerWidget {
           onTap: (index) {
             switch (index) {
               case 0:
-                context.go('/home');
+                context.goNamed(RouteNames.homeScreen);
                 break;
               case 1:
-                context.go('/transactions');
+                context.goNamed(RouteNames.sponsorshipScreen);
                 break;
               case 2:
-                context.go('/profile');
+                context.goNamed(RouteNames.donationScreen);
                 break;
               case 3:
-                context.go('/admin');
+                context.goNamed(RouteNames.newsScreen);
+                break;
+              case 4:
+                context.goNamed(RouteNames.profileScreen);
                 break;
             }
           },
@@ -50,23 +68,39 @@ class MainShell extends ConsumerWidget {
           backgroundColor: Theme.of(context).colorScheme.primary,
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home, size: 32),
+              icon: HugeIcon(
+                icon: HugeIcons.strokeRoundedHome03,
+                color: context.colorScheme.primary,
+              ),
               label: 'home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.history_rounded, size: 32),
+              icon: HugeIcon(
+                icon: HugeIcons.strokeRoundedChart01,
+                color: context.colorScheme.primary,
+              ),
               label: 'transactions',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle_sharp, size: 32),
+              icon: HugeIcon(
+                icon: HugeIcons.strokeRoundedStarAward01,
+                color: context.colorScheme.primary,
+              ),
               label: 'profile',
             ),
             BottomNavigationBarItem(
-              icon: Transform.rotate(
-                angle: pi / 2,
-                child: Icon(Icons.build, size: 28),
+              icon: HugeIcon(
+                icon: HugeIcons.strokeRoundedComputer,
+                color: context.colorScheme.primary,
               ),
               label: 'admin',
+            ),
+            BottomNavigationBarItem(
+              icon: HugeIcon(
+                icon: HugeIcons.strokeRoundedUser,
+                color: context.colorScheme.primary,
+              ),
+              label: 'home',
             ),
           ],
         ),
