@@ -8,7 +8,7 @@ class MyTheme {
   static const Color kTextColor = Color(0xFF000000);
   static const Color kCardColor = Color(0xFF2A2A2A);
   static const Color kFillColor = Color(0xfff7f9fc);
-
+  static const Color kShadeColor = Color(0xffcce5f4);
   static final ThemeData customTheme = ThemeData(
     brightness: Brightness.light,
     scaffoldBackgroundColor: kBackgroundColor,
@@ -24,6 +24,7 @@ class MyTheme {
       onError: Colors.white,
       primaryContainer: kPrimaryColor,
       secondaryContainer: kCardColor,
+      shadow: kShadeColor,
     ),
     iconTheme: const IconThemeData(color: kTextColor),
     textTheme: const TextTheme(
