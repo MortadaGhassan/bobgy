@@ -1,29 +1,29 @@
+import 'package:algad_almushriq/theme/theme.dart';
+import 'package:algad_almushriq/utlis/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 
 class OptionCard extends StatelessWidget {
-  final IconData leadingIcon;
+  final IconData? leadingIcon;
   final String text;
-  final ValueChanged<bool>? onChanged;
-  final bool value;
+  final Widget trailing;
 
   const OptionCard({
     super.key,
-    required this.leadingIcon,
+    this.leadingIcon,
     required this.text,
-    this.onChanged,
-    required this.value,
+    required this.trailing,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 70,
+      height: 9.h,
       width: double.infinity,
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
-          side: const BorderSide(),
+          side: BorderSide(color: context.colorScheme.onSecondary, width: 1.5),
         ),
         elevation: 5,
         child: Padding(
@@ -31,13 +31,15 @@ class OptionCard extends StatelessWidget {
           child: Row(
             textDirection: TextDirection.rtl,
             children: [
-              HugeIcon(
-                icon: leadingIcon,
-                color: Theme.of(context).colorScheme.primary,
-              ),
-              const SizedBox(width: 15),
+              if (leadingIcon != null) ...[
+                HugeIcon(
+                  icon: leadingIcon!,
+                  color: context.colorScheme.primary,
+                ),
+                const SizedBox(width: 15),
+              ],
               Expanded(child: Text(text, textAlign: TextAlign.end)),
-              Switch(value: value, onChanged: onChanged),
+              trailing,
             ],
           ),
         ),
