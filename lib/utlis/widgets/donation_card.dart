@@ -23,23 +23,23 @@ class DonationCard extends StatelessWidget {
             ClipRRect(
               child: Container(
                 width: double.infinity,
-                height: 13.h,
+                height: 11.h,
                 child: Transform.translate(
                   offset: Offset(0, 10),
                   child: Transform.scale(
-                    scale: 1.2,
+                    scale: 1.25,
                     child: Image.asset(image, fit: BoxFit.cover),
                   ),
                 ),
               ),
             ),
             Container(
-              padding: EdgeInsets.only(top: 0.5.h),
-              height: 4.5.h,
+              padding: EdgeInsets.only(top: 0.4.h),
+              height: 3.h,
               child: Text(
                 text,
                 style: TextStyle(
-                  fontSize: SizeConfig.font16,
+                  fontSize: SizeConfig.font12,
                   fontWeight: FontWeight.w700,
                   color: Colors.white,
                 ),

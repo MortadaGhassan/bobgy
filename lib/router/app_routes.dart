@@ -19,7 +19,7 @@ class AppRoutes {
     return GoRouter(
       initialLocation:
           isOnboardingCompleted
-              ? RouteNames.logInScreen
+              ? RouteNames.homeScreen
               : RouteNames.onboardingScreen,
       routes: [
         ShellRoute(
