@@ -1,7 +1,6 @@
 import 'package:algad_almushriq/utlis/size_config.dart';
 import 'package:algad_almushriq/utlis/widgets/custome_cliped_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import '../utlis/widgets/donation_card.dart';
 import '../utlis/widgets/instant_donation_card.dart';
