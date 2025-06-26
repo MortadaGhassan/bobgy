@@ -1,6 +1,9 @@
+import 'package:algad_almushriq/router/route_names.dart';
 import 'package:algad_almushriq/theme/theme.dart';
 import 'package:algad_almushriq/utlis/widgets/tech_support_card.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 class TechSupportScreen extends StatelessWidget {
   const TechSupportScreen({super.key});
@@ -24,21 +27,31 @@ class TechSupportScreen extends StatelessWidget {
           ),
         ),
 
-        // 👇 Fixed Button at Bottom
         bottomNavigationBar: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: ElevatedButton(
             onPressed: () {
+              context.pushNamed(RouteNames.addReportScreen);
+
               // Add your button logic here
             },
             style: ElevatedButton.styleFrom(
               minimumSize: const Size.fromHeight(50),
             ),
-            child: const Text('إنشاء تذكرة جديدة'),
+            child: Row(
+              spacing: 11,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'رفع شكوى',
+                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
+                ),
+                Icon(HugeIcons.strokeRoundedAddSquare, size: 18),
+              ],
+            ),
           ),
         ),
 
-        // 👇 Scrollable List with padding at the bottom
         body: Padding(
           padding: const EdgeInsets.all(15.0),
           child: ListView(
