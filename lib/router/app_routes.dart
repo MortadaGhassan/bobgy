@@ -9,6 +9,7 @@ import 'package:algad_almushriq/view/onboarding_screen.dart';
 import 'package:algad_almushriq/view/profile_screen.dart';
 import 'package:algad_almushriq/view/register.dart';
 import 'package:algad_almushriq/view/sponsorship_screen.dart';
+import 'package:algad_almushriq/view/tech_support.dart';
 import 'package:algad_almushriq/view/terms_condetions.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -46,9 +47,14 @@ class AppRoutes {
               builder: ((context, state) => ProfileScreen()),
               routes: [
                 GoRoute(
-                  name: RouteNames.termsConditionsScreen, // ✅ Add name here
+                  name: RouteNames.termsConditionsScreen,
                   path: 'terms_condition',
                   builder: (context, state) => TermsConditionsScreen(),
+                ),
+                GoRoute(
+                  name: RouteNames.techSupportScreen,
+                  path: 'tech_support',
+                  builder: (context, state) => TechSupportScreen(),
                 ),
               ],
             ),
