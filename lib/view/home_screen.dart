@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../utlis/widgets/donation_card.dart';
 import '../utlis/widgets/instant_donation_card.dart';
+import '../utlis/widgets/news_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -123,7 +124,7 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               ),
                               Positioned(
-                                top: 52,
+                                top: 6.1.h,
                                 right: 16,
                                 child: Text(
                                   'ساهم الآن في تغيير حياة الأيتام!\nتبرعك يضمن لهم مأوى دافئًا، وحياة مليئة\n بالأمل. كل مساهمة تحدث فرقًا كبيرً كن\n سببًا في إسعادهم اليوم .',
@@ -164,7 +165,7 @@ class HomeScreen extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.symmetric(vertical: 4),
                         child: SizedBox(
-                          height: 31.h,
+                          height: 42.h,
                           child: ListView.separated(
                             scrollDirection: Axis.horizontal,
                             reverse: true,
@@ -173,6 +174,48 @@ class HomeScreen extends StatelessWidget {
                             itemCount: 4,
                             itemBuilder:
                                 ((context, index) => InstantDonationCard()),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(right: 5, top: 12, bottom: 6),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            GestureDetector(
+                              onTap: () {},
+                              child: Text(
+                                "عرض المرزيد",
+                                textDirection: TextDirection.rtl,
+                                style: TextStyle(
+                                  fontSize: SizeConfig.font12,
+                                  fontWeight: FontWeight.w300,
+                                  color: Theme.of(context).colorScheme.primary,
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "الاخبار",
+                              textDirection: TextDirection.rtl,
+                              style: TextStyle(
+                                fontSize: SizeConfig.font16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 4),
+                        child: SizedBox(
+                          height: 30.h,
+                          child: ListView.separated(
+                            scrollDirection: Axis.horizontal,
+                            reverse: true,
+                            separatorBuilder:
+                                (context, index) => SizedBox(width: 8),
+                            itemCount: 4,
+                            itemBuilder: ((context, index) => NewsCard()),
                           ),
                         ),
                       ),
