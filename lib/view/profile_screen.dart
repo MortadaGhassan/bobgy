@@ -59,7 +59,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         mainAxisAlignment: MainAxisAlignment.start,
-                        children: [Text('مرتضى غسان'), Text('07700000000')],
+                        children: [
+                          Text(
+                            'مرتضى غسان',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 14,
+                            ),
+                          ),
+                          Text(
+                            '07700000000',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
                       ),
                       SizedBox(width: 120),
                       HugeIcon(
@@ -119,7 +134,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
               leadingIcon: HugeIcons.strokeRoundedCustomerService01,
               text: 'الدعم الفني',
               trailing: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.pushNamed(RouteNames.techSupportScreen);
+                },
                 icon: Icon(Icons.arrow_back_ios_rounded),
               ),
             ),
