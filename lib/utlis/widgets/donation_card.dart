@@ -9,7 +9,7 @@ class DonationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(4),
+      margin: EdgeInsets.symmetric(horizontal: 1.w, vertical: 0.5.h),
       width: 29.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),

@@ -46,7 +46,7 @@ class InstantDonationCard extends StatelessWidget {
                 border: Border.all(color: Colors.white, width: 2),
               ),
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 5),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
