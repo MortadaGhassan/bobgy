@@ -1,5 +1,6 @@
 import 'package:algad_almushriq/providers/onboarding_provider.dart';
 import 'package:algad_almushriq/router/route_names.dart';
+import 'package:algad_almushriq/view/add_report_screen.dart';
 import 'package:algad_almushriq/view/donation_screen.dart';
 import 'package:algad_almushriq/view/home_screen.dart';
 import 'package:algad_almushriq/view/login.dart';
@@ -70,6 +71,14 @@ class AppRoutes {
           path: RouteNames.techSupportScreen,
           parentNavigatorKey: rootNavigatorKey,
           builder: (context, state) => TechSupportScreen(),
+          routes: [
+            GoRoute(
+              builder: (context, state) => AddReportScreen(),
+              parentNavigatorKey: rootNavigatorKey,
+              path: RouteNames.addReportScreen,
+              name: RouteNames.addReportScreen,
+            ),
+          ],
         ),
 
         GoRoute(

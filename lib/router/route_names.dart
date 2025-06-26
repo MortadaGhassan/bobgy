@@ -9,4 +9,5 @@ class RouteNames {
   static final sponsorshipScreen = '/sponsorshipScreen';
   static final termsConditionsScreen = '/termsConditionsScreen';
   static final techSupportScreen = '/techSupportScreen';
+  static final addReportScreen = '/addReportScreen';
 }
