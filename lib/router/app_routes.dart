@@ -11,13 +11,17 @@ import 'package:algad_almushriq/view/register.dart';
 import 'package:algad_almushriq/view/sponsorship_screen.dart';
 import 'package:algad_almushriq/view/tech_support.dart';
 import 'package:algad_almushriq/view/terms_condetions.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRoutes {
   static GoRouter createRouter(WidgetRef ref) {
+    final rootNavigatorKey = GlobalKey<NavigatorState>();
+
     final isOnboardingCompleted = ref.watch(onboardingNotifierProvider);
     return GoRouter(
+      navigatorKey: rootNavigatorKey,
       initialLocation:
           isOnboardingCompleted
               ? RouteNames.homeScreen
@@ -45,18 +49,6 @@ class AppRoutes {
               name: RouteNames.profileScreen,
               path: '/profileScreen',
               builder: ((context, state) => ProfileScreen()),
-              routes: [
-                GoRoute(
-                  name: RouteNames.termsConditionsScreen,
-                  path: 'terms_condition',
-                  builder: (context, state) => TermsConditionsScreen(),
-                ),
-                GoRoute(
-                  name: RouteNames.techSupportScreen,
-                  path: 'tech_support',
-                  builder: (context, state) => TechSupportScreen(),
-                ),
-              ],
             ),
             GoRoute(
               name: RouteNames.sponsorshipScreen,
@@ -65,6 +57,21 @@ class AppRoutes {
             ),
           ],
         ),
+
+        ///Routes OUTSIDE the shell
+        GoRoute(
+          name: RouteNames.termsConditionsScreen,
+          path: RouteNames.termsConditionsScreen,
+          parentNavigatorKey: rootNavigatorKey,
+          builder: (context, state) => TermsConditionsScreen(),
+        ),
+        GoRoute(
+          name: RouteNames.techSupportScreen,
+          path: RouteNames.techSupportScreen,
+          parentNavigatorKey: rootNavigatorKey,
+          builder: (context, state) => TechSupportScreen(),
+        ),
+
         GoRoute(
           name: RouteNames.onboardingScreen,
           path: '/onboardingScreen',
