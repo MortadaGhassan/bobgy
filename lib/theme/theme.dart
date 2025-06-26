@@ -3,12 +3,15 @@ import 'package:flutter/material.dart';
 class MyTheme {
   static const Color kBackgroundColor = Color(0xFFFFFFFF);
   static const Color kPrimaryColor = Color(0xFF41A2D8);
-  static const Color kErrorColor = Color(0xFFFF0C0C);
-  static const Color kSuccessColor = Color(0xFF04FF00);
   static const Color kTextColor = Color(0xFF000000);
   static const Color kCardColor = Color(0xFF2A2A2A);
   static const Color kFillColor = Color(0xfff7f9fc);
   static const Color kShadeColor = Color(0xffcce5f4);
+  static const Color kErrorColor = Color(0xFFF24545);
+  static const Color kSuccessColor = Color(0xFF6ee082);
+  static const Color kWaitingColor = Color(0xFFFdc838);
+  static const Color kReviewColor = Color(0xFFFd7b32);
+
   static final ThemeData customTheme = ThemeData(
     brightness: Brightness.light,
     scaffoldBackgroundColor: kBackgroundColor,
@@ -21,7 +24,8 @@ class MyTheme {
       surface: kFillColor,
       onSurface: kTextColor,
       error: kErrorColor,
-      onError: Colors.white,
+      onError: kWaitingColor,
+      secondaryFixed: kReviewColor,
       primaryContainer: kPrimaryColor,
       secondaryContainer: kCardColor,
       shadow: kShadeColor,
