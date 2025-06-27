@@ -131,7 +131,7 @@ class HomeScreen extends StatelessWidget {
                                 'assets/images/9f317d1244626535af22fa260b4f9486d6fa25de.jpg',
                             text: "كفالة يتيم",
                             onTap: () {
-                              context.goNamed(
+                              context.pushNamed(
                                 RouteNames.orphanCustodyProgrammeScreen,
                               );
                             },
