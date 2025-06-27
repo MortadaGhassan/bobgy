@@ -1,7 +1,11 @@
+import 'package:algad_almushriq/theme/theme.dart';
 import 'package:algad_almushriq/utlis/size_config.dart';
 import 'package:algad_almushriq/utlis/widgets/custome_cliped_button.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:hugeicons/hugeicons.dart';
 
+import '../router/route_names.dart';
 import '../utlis/widgets/donation_card.dart';
 import '../utlis/widgets/instant_donation_card.dart';
 import '../utlis/widgets/news_card.dart';
@@ -14,6 +18,52 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        title: Padding(
+          padding: EdgeInsets.only(bottom: 13.h, top: 1.h, right: 4.w),
+          child: Align(
+            alignment: Alignment.centerRight,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  'اهلا بك',
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    fontSize: SizeConfig.font18,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.white,
+                  ),
+                ),
+                Text(
+                  'ازهر خضير',
+                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    fontSize: SizeConfig.font22,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        leadingWidth: 20.w,
+        leading: Padding(
+          padding: EdgeInsets.only(bottom: 13.h, left: 6.w, top: 1.h),
+          child: ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              alignment: Alignment.center,
+              elevation: 0,
+              backgroundColor: Color(0x4DFFFFFF),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+            ),
+            child: HugeIcon(
+              icon: HugeIcons.strokeRoundedNotification02,
+              color: Colors.white,
+            ),
+          ),
+        ),
         backgroundColor: Colors.transparent,
         elevation: 0,
         toolbarHeight: 20.h,
@@ -57,7 +107,7 @@ class HomeScreen extends StatelessWidget {
               ),
               height: 85.h,
               child: Padding(
-                padding: EdgeInsets.only(top: 30, left: 12, right: 12),
+                padding: EdgeInsets.only(top: 30, left: 3.49.w, right: 3.49.w),
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -68,16 +118,23 @@ class HomeScreen extends StatelessWidget {
                           DonationCard(
                             image: 'assets/images/handGiveMoney.jpg',
                             text: "تبرع الان",
+                            onTap: () {},
                           ),
                           DonationCard(
                             image:
                                 'assets/images/ebba5e482cd4ef3e56901fb3a137874c437ff6aa.jpg',
                             text: "التبرع بالسلع",
+                            onTap: () {},
                           ),
                           DonationCard(
                             image:
                                 'assets/images/9f317d1244626535af22fa260b4f9486d6fa25de.jpg',
                             text: "كفالة يتيم",
+                            onTap: () {
+                              context.goNamed(
+                                RouteNames.orphanCustodyProgrammeScreen,
+                              );
+                            },
                           ),
                         ],
                       ),

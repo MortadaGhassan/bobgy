@@ -7,6 +7,7 @@ import 'package:algad_almushriq/view/login.dart';
 import 'package:algad_almushriq/view/main_shell.dart';
 import 'package:algad_almushriq/view/news_screen.dart';
 import 'package:algad_almushriq/view/onboarding_screen.dart';
+import 'package:algad_almushriq/view/orphan_custody_programme_screen.dart';
 import 'package:algad_almushriq/view/profile_screen.dart';
 import 'package:algad_almushriq/view/register.dart';
 import 'package:algad_almushriq/view/sponsorship_screen.dart';
@@ -95,6 +96,11 @@ class AppRoutes {
           name: RouteNames.authScreen,
           path: '/authScreen',
           builder: ((context, state) => AuthScreen()),
+        ),
+        GoRoute(
+          name: RouteNames.orphanCustodyProgrammeScreen,
+          path: '/orphanCustodyProgrammeScreen',
+          builder: ((context, state) => OrphanCustodyProgrammeScreen()),
         ),
       ],
     );

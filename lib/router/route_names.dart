@@ -10,4 +10,5 @@ class RouteNames {
   static final termsConditionsScreen = '/termsConditionsScreen';
   static final techSupportScreen = '/techSupportScreen';
   static final addReportScreen = '/addReportScreen';
+  static final orphanCustodyProgrammeScreen = 'orphanCustodyProgrammeScreen';
 }

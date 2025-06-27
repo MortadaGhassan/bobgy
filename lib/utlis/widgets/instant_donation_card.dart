@@ -58,7 +58,7 @@ class InstantDonationCard extends StatelessWidget {
                         Icon(
                           Icons.check_circle,
                           color: Color(0xff130558),
-                          size: 3.5.w,
+                          size: 3.w,
                         ),
                         SizedBox(width: 2),
                         Text(
@@ -101,6 +101,7 @@ class InstantDonationCard extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
+                        SizedBox(width: 1.2.w),
                         Text(
                           '92%',
                           style: TextStyle(
@@ -108,7 +109,7 @@ class InstantDonationCard extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                           ),
                         ),
-                        SizedBox(width: 8.9.h),
+                        Spacer(),
                         Text(
                           '450,000 دع',
                           textDirection: TextDirection.rtl,
@@ -144,8 +145,8 @@ class InstantDonationCard extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.zero,
                             elevation: 0,
-                            maximumSize: Size(20.w, 5.5.h),
-                            minimumSize: Size(20.w, 5.5.h),
+                            maximumSize: Size(20.w, 5.h),
+                            minimumSize: Size(20.w, 5.h),
                           ),
                           child: Text(
                             'ادفع الان',

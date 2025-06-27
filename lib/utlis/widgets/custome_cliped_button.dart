@@ -15,31 +15,36 @@ class CustomeClipedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: ClipPath(
-        clipper: NotechedButtonClipper(),
-        child: Container(
-          height: height,
-          width: width,
-          color: Theme.of(context).colorScheme.surface,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Icon(
-                Icons.arrow_back_rounded,
-                size: 6.w,
-                color: Theme.of(context).colorScheme.primary,
-              ),
-              Text(
-                'تبرع الان',
-                style: TextStyle(
-                  fontSize: SizeConfig.font14,
-                  fontWeight: FontWeight.w700,
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        splashColor: Colors.grey[400],
+        borderRadius: BorderRadius.circular(5),
+        child: ClipPath(
+          clipper: NotechedButtonClipper(),
+          child: Container(
+            height: height,
+            width: width,
+            color: Theme.of(context).colorScheme.surface,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Icon(
+                  Icons.arrow_back_rounded,
+                  size: 6.w,
                   color: Theme.of(context).colorScheme.primary,
                 ),
-              ),
-            ],
+                Text(
+                  'تبرع الان',
+                  style: TextStyle(
+                    fontSize: SizeConfig.font14,
+                    fontWeight: FontWeight.w700,
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
