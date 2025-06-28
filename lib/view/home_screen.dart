@@ -1,3 +1,4 @@
+import 'package:algad_almushriq/l10n/app_localizations.dart';
 import 'package:algad_almushriq/theme/theme.dart';
 import 'package:algad_almushriq/utlis/size_config.dart';
 import 'package:algad_almushriq/utlis/widgets/custome_cliped_button.dart';
@@ -26,7 +27,7 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  'اهلا بك',
+                  AppLocalizations.of(context)!.userGreeting,
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                     fontSize: SizeConfig.font18,
                     fontWeight: FontWeight.w400,

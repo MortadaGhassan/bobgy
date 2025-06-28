@@ -1,23 +1,26 @@
+import 'package:algad_almushriq/providers/locale_provider.dart';
 import 'package:algad_almushriq/router/route_names.dart';
 import 'package:algad_almushriq/theme/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:algad_almushriq/utlis/widgets/option_card.dart';
 
-class ProfileScreen extends StatefulWidget {
+class ProfileScreen extends ConsumerStatefulWidget {
   const ProfileScreen({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  ConsumerState<ProfileScreen> createState() => _ProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _ProfileScreenState extends ConsumerState<ProfileScreen> {
   bool isEnglish = true;
   bool isNotification = true;
 
   @override
   Widget build(BuildContext context) {
+    final locale = ref.watch(localeNotifierProvider);
     return Scaffold(
       appBar: AppBar(
         flexibleSpace: Stack(
@@ -117,6 +120,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   setState(() {
                     isEnglish = index == 1;
                   });
+                  if (isEnglish) {
+                    ref
+                        .read(localeNotifierProvider.notifier)
+                        .setLocale(Locale('en'));
+                  } else {
+                    ref
+                        .read(localeNotifierProvider.notifier)
+                        .setLocale(Locale('ar'));
+                  }
                 },
                 selectedColor: Colors.white,
                 color: context.colorScheme.primary,
