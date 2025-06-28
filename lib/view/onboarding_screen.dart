@@ -22,6 +22,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
       body: Stack(
         children: [
           PageView(
+            reverse: true,
             controller: _pageController,
             onPageChanged: (val) {
               ref.read(onboardingCounterProvider.notifier).state = val;
@@ -35,7 +36,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                 heading: 'مرحبًا بك في تطبيق مؤسسة الغد المشرق',
                 content:
                     'ابدأ رحلتك في دعم الأيتام والفقراء. قم بالكفالة أو التبرع للمحتاجين مباشرة عبر التطبيق.',
-                alignment: Alignment(0, 0),
+                imageAlignment: Alignment(0, 0),
               ),
               OnboardingPage(
                 onboardingCounter: onboardingCounter,
@@ -45,7 +46,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                 heading: 'كل خطوة تحدث فرقًا',
                 content:
                     'من خلال التطبيق، يمكنك متابعة تقدم المساعدة التي تقدمها ومشاهدة التغيير الذي يحدث في حياة الأيتام والفقراء.',
-                alignment: Alignment(-0.2, 0),
+                imageAlignment: Alignment(-0.2, 0),
               ),
               OnboardingPage(
                 onboardingCounter: onboardingCounter,
@@ -55,7 +56,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                 heading: 'معًا نصنع غدًا مشرقًا!',
                 content:
                     'كل تبرع أو كفالة تُساهم في تحسين حياة المحتاجين، ونعمل معًا لتوفير الأمل والفرص للأيتام والفقراء في المجتمع.',
-                alignment: Alignment(-0.5, 0),
+                imageAlignment: Alignment(-0.5, 0),
               ),
             ],
           ),

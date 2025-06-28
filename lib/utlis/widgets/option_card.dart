@@ -29,7 +29,6 @@ class OptionCard extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 6),
           child: Row(
-            textDirection: TextDirection.rtl,
             children: [
               if (leadingIcon != null) ...[
                 HugeIcon(
@@ -38,7 +37,7 @@ class OptionCard extends StatelessWidget {
                 ),
                 const SizedBox(width: 15),
               ],
-              Expanded(child: Text(text, textAlign: TextAlign.end)),
+              Expanded(child: Text(text, textAlign: TextAlign.start)),
               trailing,
             ],
           ),

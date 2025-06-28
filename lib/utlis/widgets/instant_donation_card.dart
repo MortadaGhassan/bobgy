@@ -49,18 +49,12 @@ class InstantDonationCard extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 2.w),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Icon(
-                          Icons.check_circle,
-                          color: Color(0xff130558),
-                          size: 3.w,
-                        ),
-                        SizedBox(width: 2),
                         Text(
                           'Bantubarengan',
                           style: TextStyle(
@@ -68,6 +62,12 @@ class InstantDonationCard extends StatelessWidget {
                             fontSize: SizeConfig.font12,
                             fontWeight: FontWeight.w400,
                           ),
+                        ),
+                        SizedBox(width: 2),
+                        Icon(
+                          Icons.check_circle,
+                          color: Color(0xff130558),
+                          size: 3.w,
                         ),
                       ],
                     ),
@@ -79,10 +79,10 @@ class InstantDonationCard extends StatelessWidget {
                       ),
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          'المبلغ المستهدف',
+                          'المبلغ المتبقي',
                           style: TextStyle(
                             fontSize: SizeConfig.font10,
                             fontWeight: FontWeight.w400,
@@ -99,20 +99,12 @@ class InstantDonationCard extends StatelessWidget {
                       ],
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         SizedBox(width: 1.2.w),
+
                         Text(
-                          '92%',
-                          style: TextStyle(
-                            fontSize: SizeConfig.font10,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                        Spacer(),
-                        Text(
-                          '450,000 دع',
-                          textDirection: TextDirection.rtl,
+                          '50,000 دع',
                           style: TextStyle(
                             fontSize: SizeConfig.font10,
                             fontWeight: FontWeight.w400,
@@ -120,8 +112,15 @@ class InstantDonationCard extends StatelessWidget {
                         ),
                         SizedBox(width: 7.h),
                         Text(
-                          '50,000 دع',
-                          textDirection: TextDirection.rtl,
+                          '450,000 دع',
+                          style: TextStyle(
+                            fontSize: SizeConfig.font10,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        Spacer(),
+                        Text(
+                          '92%',
                           style: TextStyle(
                             fontSize: SizeConfig.font10,
                             fontWeight: FontWeight.w400,
@@ -140,6 +139,20 @@ class InstantDonationCard extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
+                        Container(
+                          height: 5.5.h,
+                          width: 40.w,
+                          child: TextField(
+                            textDirection: TextDirection.rtl,
+                            controller: _donatedAmoutController,
+                            keyboardType: TextInputType.numberWithOptions(),
+                            style: TextStyle(),
+                            decoration: InputDecoration(
+                              hintTextDirection: TextDirection.rtl,
+                              hintText: 'ادخل المبلغ د,ع',
+                            ),
+                          ),
+                        ),
                         ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
@@ -153,20 +166,6 @@ class InstantDonationCard extends StatelessWidget {
                             style: TextStyle(
                               fontSize: SizeConfig.font12,
                               fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          height: 5.5.h,
-                          width: 40.w,
-                          child: TextField(
-                            textDirection: TextDirection.rtl,
-                            controller: _donatedAmoutController,
-                            keyboardType: TextInputType.numberWithOptions(),
-                            style: TextStyle(),
-                            decoration: InputDecoration(
-                              hintTextDirection: TextDirection.rtl,
-                              hintText: 'ادخل المبلغ د,ع',
                             ),
                           ),
                         ),

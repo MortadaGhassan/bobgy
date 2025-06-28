@@ -1,10 +1,5 @@
 {
   "language": "English",
-  "@language":{
-  "description": "The current language"
-  },
-  "userGreeting": "Welcome",
-  "@userGreeting":{
-  "description": "User greeting"
-  }
+  "userGreeting": "Welcome"
+
 }

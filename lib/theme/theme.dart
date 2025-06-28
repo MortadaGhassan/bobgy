@@ -90,6 +90,14 @@ class MyTheme {
         borderSide: const BorderSide(color: kPrimaryColor),
       ),
     ),
+    switchTheme: SwitchThemeData(
+      trackOutlineColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.selected)) {
+          return Colors.white;
+        }
+        return Colors.grey[200];
+      }),
+    ),
   );
 }
 

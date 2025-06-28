@@ -6,11 +6,13 @@ class CustomeClipedButton extends StatelessWidget {
   final GestureTapCallback onTap;
   final double height;
   final double width;
+  final bool reversed;
   const CustomeClipedButton({
     super.key,
     required this.onTap,
     required this.height,
     required this.width,
+    required this.reversed,
   });
 
   @override
@@ -27,23 +29,31 @@ class CustomeClipedButton extends StatelessWidget {
             height: height,
             width: width,
             color: Theme.of(context).colorScheme.surface,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Icon(
-                  Icons.arrow_back_rounded,
-                  size: 6.w,
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-                Text(
-                  'تبرع الان',
-                  style: TextStyle(
-                    fontSize: SizeConfig.font14,
-                    fontWeight: FontWeight.w700,
+            child: Transform(
+              alignment: Alignment.center,
+              transform:
+                  reversed == true
+                        ? (Matrix4.identity()..scale(-1.0, 1.0))
+                        : Matrix4.identity()
+                    ..scale(1.0, 1.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    'تبرع الان',
+                    style: TextStyle(
+                      fontSize: SizeConfig.font14,
+                      fontWeight: FontWeight.w700,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
+                  Icon(
+                    Icons.arrow_forward_rounded,
+                    size: 6.w,
                     color: Theme.of(context).colorScheme.primary,
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

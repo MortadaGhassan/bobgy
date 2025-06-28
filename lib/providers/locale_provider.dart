@@ -23,10 +23,9 @@ class LocaleNotifier extends _$LocaleNotifier {
   Future<void> getLocale() async {
     final prefs = await SharedPreferences.getInstance();
     final _localCode = await prefs.getString("selectedLanguage");
-    state = Locale(_localCode!);
-  }
-
-  void clearLocale() {
-    state = null;
+    state =
+        _localCode != null
+            ? Locale(_localCode)
+            : WidgetsBinding.instance.platformDispatcher.locale;
   }
 }

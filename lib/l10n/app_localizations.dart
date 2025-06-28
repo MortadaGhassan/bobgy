@@ -98,13 +98,13 @@ abstract class AppLocalizations {
     Locale('en'),
   ];
 
-  /// The current language
+  /// No description provided for @language.
   ///
   /// In en, this message translates to:
   /// **'English'**
   String get language;
 
-  /// User greeting
+  /// No description provided for @userGreeting.
   ///
   /// In en, this message translates to:
   /// **'Welcome'**

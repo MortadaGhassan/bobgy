@@ -15,8 +15,7 @@ class KindsOfCustody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      textDirection: TextDirection.rtl,
-      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CircleAvatar(
@@ -27,11 +26,10 @@ class KindsOfCustody extends StatelessWidget {
         SizedBox(width: 2.w),
         Expanded(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 '$title:',
-                textDirection: TextDirection.rtl,
                 style: TextStyle(
                   fontSize: SizeConfig.font16,
                   fontWeight: FontWeight.w500,
@@ -39,7 +37,6 @@ class KindsOfCustody extends StatelessWidget {
               ),
               Text(
                 content,
-                textDirection: TextDirection.rtl,
                 softWrap: true,
                 style: TextStyle(
                   fontSize: SizeConfig.font14,

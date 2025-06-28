@@ -1,5 +1,7 @@
 import 'package:algad_almushriq/theme/theme.dart';
+import 'package:algad_almushriq/utlis/size_config.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class TermsConditionsScreen extends StatelessWidget {
   const TermsConditionsScreen({super.key});
@@ -19,16 +21,50 @@ class TermsConditionsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'الأحكام والشروط',
-          style: TextStyle(color: context.colorScheme.onSecondary),
+        flexibleSpace: Stack(
+          fit: StackFit.expand,
+          children: [
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Color(0xff2c759e), Color(0xff41a2d8)],
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                ),
+              ),
+              child: Image.asset(
+                'assets/images/Vector2.png',
+                fit: BoxFit.cover,
+              ),
+            ),
+          ],
         ),
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back_ios_new,
-            color: context.colorScheme.onSecondary,
+        leadingWidth: 45.w,
+        leading: Padding(
+          padding: EdgeInsetsGeometry.symmetric(horizontal: 2.w),
+          child: InkWell(
+            onTap: () => context.pop(),
+            borderRadius: BorderRadius.circular(15),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.arrow_back_ios_rounded,
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 1.h),
+                  child: Text(
+                    "الاحكام والشروط",
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.onPrimary,
+                      fontSize: SizeConfig.font18,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
-          onPressed: () => Navigator.of(context).pop(),
         ),
       ),
       body: SingleChildScrollView(
@@ -43,6 +79,7 @@ class TermsConditionsScreen extends StatelessWidget {
               Text(
                 'عند استخدامك لتطبيق مؤسسة "الغد المشرق"، فإنك توافق على الالتزام بهذه الأحكام والشروط بالكامل. إذا كنت لا توافق عليها، يرجى التوقف عن استخدام التطبيق.',
                 style: bodyStyle,
+                softWrap: true,
               ),
               const SizedBox(height: 16),
 
@@ -55,6 +92,7 @@ class TermsConditionsScreen extends StatelessWidget {
                 '- متابعة الكفالات والتبرعات.\n'
                 '- التواصل مع المؤسسة لمتابعة الحالات.',
                 style: bodyStyle,
+                softWrap: true,
               ),
               const SizedBox(height: 16),
 

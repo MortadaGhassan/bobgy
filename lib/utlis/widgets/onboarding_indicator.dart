@@ -20,54 +20,13 @@ class OnboardingIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      left: 16,
-      right: 16,
+      left: 18,
+      right: 18,
       bottom: 37,
 
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SizedBox(
-            height: 2.4.h,
-            child: ListView.separated(
-              itemBuilder:
-                  (context, index) => Container(
-                    width: 1.2.h,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color:
-                            index == onboardingCounter
-                                ? Color(0xff41A2D8)
-                                : Colors.white,
-                        width: 2,
-                      ),
-                    ),
-                  ),
-              separatorBuilder: (context, index) => SizedBox(width: 9),
-              itemCount: 3,
-              scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-            ),
-          ),
-          Spacer(),
-          if (onboardingCounter != 0) ...[
-            IconButton(
-              onPressed: () {
-                _pageController.previousPage(
-                  duration: Duration(milliseconds: 300),
-                  curve: Curves.easeInOut,
-                );
-              },
-              icon: Icon(
-                Icons.arrow_back_rounded,
-                size: 8.33.w,
-                color: Colors.white,
-              ),
-            ),
-            SizedBox(width: 8.33.w),
-          ],
           onboardingCounter != 2
               ? OutlinedButton(
                 onPressed: () {
@@ -85,7 +44,7 @@ class OnboardingIndicator extends StatelessWidget {
                   shape: CircleBorder(),
                   padding: EdgeInsets.all(11),
                 ),
-                child: Icon(Icons.arrow_forward_rounded, size: 8.33.w),
+                child: Icon(Icons.arrow_back_rounded, size: 8.33.w),
               )
               : OutlinedButton(
                 onPressed: () {
@@ -113,6 +72,48 @@ class OnboardingIndicator extends StatelessWidget {
                   ),
                 ),
               ),
+          SizedBox(width: 8.33.w),
+          if (onboardingCounter != 0) ...[
+            IconButton(
+              onPressed: () {
+                _pageController.previousPage(
+                  duration: Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                );
+              },
+              icon: Icon(
+                Icons.arrow_forward_rounded,
+                size: 8.33.w,
+                color: Colors.white,
+              ),
+            ),
+          ],
+          Spacer(),
+          SizedBox(
+            height: 2.4.h,
+            child: ListView.separated(
+              itemBuilder:
+                  (context, index) => Container(
+                    width: 1.2.h,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color:
+                            index == onboardingCounter
+                                ? Color(0xff41A2D8)
+                                : Colors.white,
+                        width: 2,
+                      ),
+                    ),
+                  ),
+              separatorBuilder: (context, index) => SizedBox(width: 9),
+              itemCount: 3,
+              scrollDirection: Axis.horizontal,
+              reverse: true,
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+            ),
+          ),
         ],
       ),
     );

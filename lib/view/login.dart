@@ -26,14 +26,12 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             Text(
               'تسجيل الدخول',
-              textDirection: TextDirection.rtl,
               style: TextStyle(fontSize: 36, fontWeight: FontWeight.w700),
             ),
             SizedBox(height: 12),
 
             Text(
               ' ساهم معنا في بناء غدٍ مشرق للأيتام والمحتاجين',
-              textDirection: TextDirection.rtl,
               style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
             ),
             SizedBox(height: 54),
@@ -42,11 +40,10 @@ class _LoginScreenState extends State<LoginScreen> {
               controller: emailController,
               keyboardType: TextInputType.numberWithOptions(),
               decoration: InputDecoration(
-                suffixIcon: HugeIcon(
+                prefixIcon: HugeIcon(
                   icon: HugeIcons.strokeRoundedCall,
                   color: context.colorScheme.primary,
                 ),
-                hintTextDirection: TextDirection.rtl,
                 hintText: 'رقم الهاتف',
               ),
             ),
@@ -55,10 +52,8 @@ class _LoginScreenState extends State<LoginScreen> {
               controller: passwordController,
               obscureText: true,
               decoration: InputDecoration(
-                hintTextDirection: TextDirection.rtl,
-
                 hintText: 'كلمة المرور',
-                suffixIcon: HugeIcon(
+                prefixIcon: HugeIcon(
                   icon: HugeIcons.strokeRoundedCircleLock01,
                   color: context.colorScheme.primary,
                 ),
@@ -100,11 +95,11 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
             ),
             SizedBox(height: 24),
-
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Text('ليس لديك حساب؟'),
                 TextButton(
                   onPressed: () {
                     isLoading = false;
@@ -117,7 +112,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
-                Text('ليس لديك حساب؟'),
               ],
             ),
           ],

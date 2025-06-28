@@ -21,26 +21,16 @@ class _AuthScreenState extends State<AuthScreen> {
         emailController.text.isEmpty ||
         passwordController.text.isEmpty ||
         rePasswordController.text.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text(
-            "الرجاء ملئ كل الحقول ",
-            textDirection: TextDirection.rtl,
-          ),
-        ),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text("الرجاء ملئ كل الحقول ")));
       return;
     }
 
     if (passwordController.text != rePasswordController.text) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text(
-            "كلمة المرور غير مطابقة",
-            textDirection: TextDirection.rtl,
-          ),
-        ),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text("كلمة المرور غير مطابقة")));
       return;
     }
 
@@ -59,25 +49,22 @@ class _AuthScreenState extends State<AuthScreen> {
           children: [
             Text(
               'انشاء حساب',
-              textDirection: TextDirection.rtl,
               style: TextStyle(fontSize: 36, fontWeight: FontWeight.w700),
             ),
             SizedBox(height: 12),
 
             Text(
               ' ساهم معنا في بناء غدٍ مشرق للأيتام والمحتاجين',
-              textDirection: TextDirection.rtl,
               style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
             ),
             SizedBox(height: 54),
             TextField(
               controller: emailController,
               decoration: InputDecoration(
-                suffixIcon: HugeIcon(
+                prefixIcon: HugeIcon(
                   icon: HugeIcons.strokeRoundedUser,
                   color: context.colorScheme.primary,
                 ),
-                hintTextDirection: TextDirection.rtl,
                 hintText: 'الاسم الكامل',
               ),
             ),
@@ -86,11 +73,10 @@ class _AuthScreenState extends State<AuthScreen> {
               controller: numberController,
               keyboardType: TextInputType.numberWithOptions(),
               decoration: InputDecoration(
-                suffixIcon: HugeIcon(
+                prefixIcon: HugeIcon(
                   icon: HugeIcons.strokeRoundedCall,
                   color: context.colorScheme.primary,
                 ),
-                hintTextDirection: TextDirection.rtl,
                 hintText: 'رقم الهاتف',
               ),
             ),
@@ -99,10 +85,8 @@ class _AuthScreenState extends State<AuthScreen> {
               controller: passwordController,
               obscureText: true,
               decoration: InputDecoration(
-                hintTextDirection: TextDirection.rtl,
-
                 hintText: 'كلمة المرور',
-                suffixIcon: HugeIcon(
+                prefixIcon: HugeIcon(
                   icon: HugeIcons.strokeRoundedCircleLock01,
                   color: context.colorScheme.primary,
                 ),
@@ -113,10 +97,8 @@ class _AuthScreenState extends State<AuthScreen> {
               controller: rePasswordController,
               obscureText: true,
               decoration: InputDecoration(
-                hintTextDirection: TextDirection.rtl,
-
                 hintText: 'تأكيد كلمة المرور',
-                suffixIcon: HugeIcon(
+                prefixIcon: HugeIcon(
                   icon: HugeIcons.strokeRoundedCircleLock01,
                   color: context.colorScheme.primary,
                 ),
@@ -164,6 +146,7 @@ class _AuthScreenState extends State<AuthScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Text('لديك حساب بالفعل؟'),
                 TextButton(
                   onPressed: () {
                     isLoading = false;
@@ -176,7 +159,6 @@ class _AuthScreenState extends State<AuthScreen> {
                     ),
                   ),
                 ),
-                Text('لديك حساب بالفعل؟'),
               ],
             ),
           ],

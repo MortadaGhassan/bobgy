@@ -10,7 +10,7 @@ class OnboardingPage extends StatelessWidget {
     required this.image,
     required this.heading,
     required this.content,
-    required this.alignment,
+    required this.imageAlignment,
   });
 
   final int onboardingCounter;
@@ -18,7 +18,7 @@ class OnboardingPage extends StatelessWidget {
   final String image;
   final String heading;
   final String content;
-  final Alignment alignment;
+  final Alignment imageAlignment;
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +26,9 @@ class OnboardingPage extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(image),
-
           fit: BoxFit.cover,
-          alignment: alignment,
+          alignment: imageAlignment,
+          matchTextDirection: true,
         ),
       ),
       child: Container(
@@ -40,28 +40,19 @@ class OnboardingPage extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.only(left: 16, right: 16, bottom: 109),
+          padding: EdgeInsets.only(left: 16, right: 16, bottom: 13.3.h),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  heading,
-                  style: Theme.of(context).textTheme.labelLarge,
-                  textDirection: TextDirection.rtl,
-                ),
-              ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  content,
-                  style: TextStyle(
-                    fontSize: SizeConfig.font20,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
-                  ),
-                  textDirection: TextDirection.rtl,
+              Text(heading, style: Theme.of(context).textTheme.labelLarge),
+              SizedBox(height: 5),
+              Text(
+                content,
+                style: TextStyle(
+                  fontSize: SizeConfig.font20,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
                 ),
               ),
             ],

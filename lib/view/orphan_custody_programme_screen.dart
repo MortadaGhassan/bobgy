@@ -31,33 +31,32 @@ class OrphanCustodyProgrammeScreen extends StatelessWidget {
             ),
           ],
         ),
-        actions: [
-          Padding(
-            padding: EdgeInsetsGeometry.only(right: 2.w),
-            child: InkWell(
-              onTap: () => context.pop(),
-              borderRadius: BorderRadius.circular(15),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(bottom: 1.h),
-                    child: Text(
-                      "برنامج الكفالة",
-                      style: TextStyle(
-                        color: Theme.of(context).colorScheme.onPrimary,
-                        fontSize: SizeConfig.font18,
-                      ),
+        leadingWidth: 45.w,
+        leading: Padding(
+          padding: EdgeInsetsGeometry.symmetric(horizontal: 2.w),
+          child: InkWell(
+            onTap: () => context.pop(),
+            borderRadius: BorderRadius.circular(15),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.arrow_back_ios_rounded,
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 1.h),
+                  child: Text(
+                    "برنامج الكفالة",
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.onPrimary,
+                      fontSize: SizeConfig.font18,
                     ),
                   ),
-                  Icon(
-                    Icons.arrow_forward_ios_rounded,
-                    color: Theme.of(context).colorScheme.onPrimary,
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
-        ],
+        ),
       ),
       backgroundColor: Theme.of(context).colorScheme.surface,
       body: SingleChildScrollView(
@@ -119,8 +118,11 @@ class OrphanCustodyProgrammeScreen extends StatelessWidget {
                   right: BorderSide(color: Colors.white, width: 0.5.w),
                 ),
               ),
-              child: Align(
-                alignment: Alignment.centerRight,
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 1.5.w,
+                  vertical: 1.5.h,
+                ),
                 child: Text(
                   'انواع الكفالة',
                   style: TextStyle(
@@ -143,8 +145,7 @@ class OrphanCustodyProgrammeScreen extends StatelessWidget {
                 border: Border.all(color: Colors.white, width: 0.5.w),
               ),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                textDirection: TextDirection.rtl,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   KindsOfCustody(
                     number: 1,
@@ -186,8 +187,11 @@ class OrphanCustodyProgrammeScreen extends StatelessWidget {
                   right: BorderSide(color: Colors.white, width: 0.5.w),
                 ),
               ),
-              child: Align(
-                alignment: Alignment.centerRight,
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 1.5.w,
+                  vertical: 1.5.h,
+                ),
                 child: Text(
                   'مزايا الكفالة',
                   style: TextStyle(
@@ -210,8 +214,7 @@ class OrphanCustodyProgrammeScreen extends StatelessWidget {
                 border: Border.all(color: Colors.white, width: 0.5.w),
               ),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                textDirection: TextDirection.rtl,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   AdvantagesOfCutody(
                     content:

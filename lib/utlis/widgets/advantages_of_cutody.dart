@@ -9,8 +9,7 @@ class AdvantagesOfCutody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      textDirection: TextDirection.rtl,
-      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         CircleAvatar(
           radius: 1.w,
@@ -20,7 +19,6 @@ class AdvantagesOfCutody extends StatelessWidget {
         Expanded(
           child: Text(
             content,
-            textDirection: TextDirection.rtl,
             softWrap: true,
             style: TextStyle(
               fontSize: SizeConfig.font14,

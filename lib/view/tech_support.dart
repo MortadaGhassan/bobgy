@@ -1,5 +1,6 @@
 import 'package:algad_almushriq/router/route_names.dart';
 import 'package:algad_almushriq/theme/theme.dart';
+import 'package:algad_almushriq/utlis/size_config.dart';
 import 'package:algad_almushriq/utlis/widgets/tech_support_card.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -12,16 +13,50 @@ class TechSupportScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'الدعم الفني',
-          style: TextStyle(color: context.colorScheme.onSecondary),
+        flexibleSpace: Stack(
+          fit: StackFit.expand,
+          children: [
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Color(0xff2c759e), Color(0xff41a2d8)],
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                ),
+              ),
+              child: Image.asset(
+                'assets/images/Vector2.png',
+                fit: BoxFit.cover,
+              ),
+            ),
+          ],
         ),
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back_ios_new,
-            color: context.colorScheme.onSecondary,
+        leadingWidth: 40.w,
+        leading: Padding(
+          padding: EdgeInsetsGeometry.symmetric(horizontal: 2.w),
+          child: InkWell(
+            onTap: () => context.pop(),
+            borderRadius: BorderRadius.circular(15),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.arrow_back_ios_rounded,
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 1.h),
+                  child: Text(
+                    "الدعم الفني",
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.onPrimary,
+                      fontSize: SizeConfig.font18,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
-          onPressed: () => Navigator.of(context).pop(),
         ),
       ),
 

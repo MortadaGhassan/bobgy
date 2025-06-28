@@ -1,6 +1,7 @@
 import 'package:algad_almushriq/providers/locale_provider.dart';
 import 'package:algad_almushriq/router/route_names.dart';
 import 'package:algad_almushriq/theme/theme.dart';
+import 'package:algad_almushriq/utlis/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -26,15 +27,26 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
         flexibleSpace: Stack(
           fit: StackFit.expand,
           children: [
-            Image.asset('assets/images/appBar.png', fit: BoxFit.cover),
-            Container(color: Colors.black.withValues(alpha: 0.3)),
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Color(0xff2c759e), Color(0xff41a2d8)],
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                ),
+              ),
+              child: Image.asset(
+                'assets/images/Vector2.png',
+                fit: BoxFit.cover,
+              ),
+            ),
           ],
         ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          textDirection: TextDirection.rtl,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
@@ -50,7 +62,6 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 15, vertical: 6),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    textDirection: TextDirection.rtl,
                     children: [
                       CircleAvatar(
                         radius: 20,
@@ -59,9 +70,10 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                           color: context.colorScheme.surface,
                         ),
                       ),
+                      SizedBox(width: 2.w),
                       Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             'مرتضى غسان',
@@ -79,18 +91,19 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                           ),
                         ],
                       ),
-                      SizedBox(width: 120),
+                      Spacer(),
                       HugeIcon(
                         icon: HugeIcons.strokeRoundedPencilEdit01,
                         color: context.colorScheme.primary,
                       ),
+                      SizedBox(width: 2.w),
                     ],
                   ),
                 ),
               ),
             ),
-            Text('الاعدادات', style: TextStyle(fontSize: 16)),
             SizedBox(height: 16),
+            Text('الاعدادات', style: TextStyle(fontSize: 16)),
             OptionCard(
               leadingIcon: HugeIcons.strokeRoundedNotification01,
 
@@ -149,7 +162,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                 onPressed: () {
                   context.pushNamed(RouteNames.techSupportScreen);
                 },
-                icon: Icon(Icons.arrow_back_ios_rounded),
+                icon: Icon(Icons.arrow_forward_ios_rounded),
               ),
             ),
             OptionCard(
@@ -159,17 +172,17 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                 onPressed: () {
                   context.pushNamed(RouteNames.termsConditionsScreen);
                 },
-                icon: Icon(Icons.arrow_back_ios_rounded),
+                icon: Icon(Icons.arrow_forward_ios_rounded),
               ),
             ),
             SizedBox(height: 20),
 
             SizedBox(height: 5),
             OptionCard(
-              text: 'حذف الحساب',
+              text: 'تسجيل الخروج',
               trailing: IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.arrow_back_ios_rounded),
+                icon: Icon(Icons.arrow_forward_ios_rounded),
               ),
             ),
           ],
