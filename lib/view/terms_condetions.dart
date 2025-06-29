@@ -1,4 +1,3 @@
-import 'package:algad_almushriq/theme/theme.dart';
 import 'package:algad_almushriq/utlis/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -42,7 +41,7 @@ class TermsConditionsScreen extends StatelessWidget {
         ),
         leadingWidth: 45.w,
         leading: Padding(
-          padding: EdgeInsetsGeometry.symmetric(horizontal: 2.w),
+          padding: EdgeInsets.symmetric(horizontal: 2.w),
           child: InkWell(
             onTap: () => context.pop(),
             borderRadius: BorderRadius.circular(15),
