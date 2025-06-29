@@ -21,7 +21,6 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final locale = ref.watch(localeNotifierProvider);
     return Scaffold(
       appBar: AppBar(
         flexibleSpace: Stack(

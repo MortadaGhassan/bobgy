@@ -1,6 +1,5 @@
 import 'package:algad_almushriq/l10n/app_localizations.dart';
 import 'package:algad_almushriq/providers/locale_provider.dart';
-import 'package:algad_almushriq/theme/theme.dart';
 import 'package:algad_almushriq/utlis/size_config.dart';
 import 'package:algad_almushriq/utlis/widgets/custome_cliped_button.dart';
 import 'package:flutter/material.dart';

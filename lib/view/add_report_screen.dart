@@ -55,7 +55,7 @@ class _AddReportScreenState extends State<AddReportScreen> {
         ),
         leadingWidth: 40.w,
         leading: Padding(
-          padding: EdgeInsetsGeometry.symmetric(horizontal: 2.w),
+          padding: EdgeInsets.symmetric(horizontal: 2.w),
           child: InkWell(
             onTap: () => context.pop(),
             borderRadius: BorderRadius.circular(15),
