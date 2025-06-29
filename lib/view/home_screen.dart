@@ -1,13 +1,11 @@
 import 'package:algad_almushriq/l10n/app_localizations.dart';
 import 'package:algad_almushriq/providers/locale_provider.dart';
-import 'package:algad_almushriq/theme/theme.dart';
 import 'package:algad_almushriq/utlis/size_config.dart';
 import 'package:algad_almushriq/utlis/widgets/custome_cliped_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hugeicons/hugeicons.dart';
-
 import '../router/route_names.dart';
 import '../utlis/widgets/donation_card.dart';
 import '../utlis/widgets/instant_donation_card.dart';
