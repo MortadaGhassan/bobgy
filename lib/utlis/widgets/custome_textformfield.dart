@@ -45,11 +45,11 @@ class CustomeTextFormField extends StatelessWidget {
           ),
         ),
         keyboardType: keyboardType ?? TextInputType.text,
-        // validator: (value) {
-        //   if (value!.isEmpty) {
-        //     return '';
-        //   }
-        // },
+        validator: (value) {
+          if (value!.isEmpty) {
+            return '';
+          }
+        },
       ),
     );
   }

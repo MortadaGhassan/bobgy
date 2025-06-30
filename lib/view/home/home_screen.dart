@@ -60,7 +60,9 @@ class HomeScreen extends ConsumerWidget {
               right: 5.w,
             ),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                context.pushNamed(RouteNames.notificationScreen);
+              },
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.all(11),
                 elevation: 0,
@@ -295,7 +297,7 @@ class HomeScreen extends ConsumerWidget {
                               "عرض المرزيد",
                               textDirection: TextDirection.rtl,
                               style: TextStyle(
-                                fontSize: SizeConfig.font12,
+                                fontSize: SizeConfig.font14,
                                 fontWeight: FontWeight.w300,
                                 color: Theme.of(context).colorScheme.primary,
                               ),
@@ -313,7 +315,13 @@ class HomeScreen extends ConsumerWidget {
                           separatorBuilder:
                               (context, index) => SizedBox(width: 8),
                           itemCount: 4,
-                          itemBuilder: ((context, index) => NewsCard()),
+                          itemBuilder:
+                              ((context, index) => NewsCard(
+                                date: 'Jan 3,2024',
+                                title: 'نجاح حملة التبرعات الشتوية:',
+                                content:
+                                    'تمكنا من جمع أكثر من 10,000 دولار في حملة التبرعات  لتوفير الملابس والبطانيات للأيتام والعائلات المحتاجة.',
+                              )),
                         ),
                       ),
                     ),

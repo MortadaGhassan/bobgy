@@ -1,7 +1,10 @@
 import 'package:algad_almushriq/utlis/size_config.dart';
 import 'package:algad_almushriq/utlis/widgets/child_card.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hugeicons/hugeicons.dart';
+
+import '../router/route_names.dart';
 
 class DonationScreen extends StatelessWidget {
   const DonationScreen({super.key});
@@ -69,7 +72,9 @@ class DonationScreen extends StatelessWidget {
               right: 5.w,
             ),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                context.pushNamed(RouteNames.notificationScreen);
+              },
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.all(11),
                 elevation: 0,

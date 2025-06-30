@@ -12,4 +12,6 @@ class RouteNames {
   static final addReportScreen = '/addReportScreen';
   static final orphanCustodyProgrammeScreen = '/orphanCustodyProgrammeScreen';
   static final custodyApplyingScreen = '/custodyApplyingScreen';
+  static final notificationScreen = '/notificationScreen';
+  static final topicNewsScreen = '/topicNewsScreen';
 }

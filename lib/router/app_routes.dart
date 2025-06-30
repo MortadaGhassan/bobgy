@@ -1,12 +1,14 @@
 import 'package:algad_almushriq/providers/onboarding_provider.dart';
 import 'package:algad_almushriq/router/route_names.dart';
 import 'package:algad_almushriq/view/home/custody_applying_screen.dart';
+import 'package:algad_almushriq/view/news/topic_news_screen.dart';
+import 'package:algad_almushriq/view/notification_screen.dart';
 import 'package:algad_almushriq/view/profile/add_report_screen.dart';
 import 'package:algad_almushriq/view/donation_screen.dart';
 import 'package:algad_almushriq/view/home/home_screen.dart';
 import 'package:algad_almushriq/view/authentication/login.dart';
 import 'package:algad_almushriq/view/main_shell.dart';
-import 'package:algad_almushriq/view/news_screen.dart';
+import 'package:algad_almushriq/view/news/news_screen.dart';
 import 'package:algad_almushriq/view/onboarding_screen.dart';
 import 'package:algad_almushriq/view/home/orphan_custody_programme_screen.dart';
 import 'package:algad_almushriq/view/profile/profile_screen.dart';
@@ -107,6 +109,16 @@ class AppRoutes {
           name: RouteNames.custodyApplyingScreen,
           path: '/custodyApplyingScreen',
           builder: ((context, state) => CustodyApplyingScreen()),
+        ),
+        GoRoute(
+          name: RouteNames.notificationScreen,
+          path: '/notificationScreen',
+          builder: ((context, state) => NotificationScreen()),
+        ),
+        GoRoute(
+          name: RouteNames.topicNewsScreen,
+          path: '/topicNewsScreen',
+          builder: ((context, state) => TopicNewsScreen()),
         ),
       ],
     );
