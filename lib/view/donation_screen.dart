@@ -42,6 +42,23 @@ class DonationScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        scrolledUnderElevation: 0,
+        title: Padding(
+          padding: EdgeInsets.only(
+            bottom: 13.h,
+            top: 4.h,
+            right: 3.w,
+            left: 3.w,
+          ),
+          child: Text(
+            'تأكيد التبرع والكفالة',
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+              fontSize: SizeConfig.font22,
+              fontWeight: FontWeight.w700,
+              color: Colors.white,
+            ),
+          ),
+        ),
         backgroundColor: Colors.transparent,
         actions: [
           Padding(
@@ -58,7 +75,7 @@ class DonationScreen extends StatelessWidget {
                 elevation: 0,
                 minimumSize: Size(13.w, 13.w),
                 maximumSize: Size(13.w, 13.w),
-                backgroundColor: Color.fromARGB(77, 46, 4, 4),
+                backgroundColor: Color(0x4DFFFFFF),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
@@ -71,7 +88,7 @@ class DonationScreen extends StatelessWidget {
           ),
         ],
         elevation: 0,
-        toolbarHeight: 10.h,
+        toolbarHeight: 20.h,
       ),
       body: Stack(
         children: [
@@ -79,11 +96,12 @@ class DonationScreen extends StatelessWidget {
             top: 0,
             left: 0,
             right: 0,
-            height: 25.h,
+            height: 30.h,
             child: Container(
+              width: double.infinity,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Color(0xff2c759e), Color(0xff41a2d8)],
+                  colors: [Colors.black, Color(0xff41a2d8)],
                   begin: Alignment.bottomCenter,
                   end: Alignment.topCenter,
                 ),
@@ -95,41 +113,43 @@ class DonationScreen extends StatelessWidget {
             ),
           ),
           Positioned(
+            top: 15.h,
             bottom: 0,
             left: 0,
             right: 0,
-            top: MediaQuery.of(context).padding.top + kToolbarHeight,
             child: Container(
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.surface,
                 borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(40),
-                  topRight: Radius.circular(40),
+                  topLeft: Radius.circular(50),
+                  topRight: Radius.circular(50),
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withAlpha(25),
-                    blurRadius: 10,
-                    spreadRadius: 2,
-                    offset: Offset(0, -5),
-                  ),
-                ],
               ),
-              child: ClipRRect(
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(40),
-                  topRight: Radius.circular(40),
-                ),
-                child: SingleChildScrollView(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 20,
-                    horizontal: 3.49.w,
-                  ),
-                  child: Column(
-                    children: [
-                      ListView.builder(
+              child: Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(
+                        right: 16,
+                        top: 43,
+                        bottom: 10,
+                        left: 16,
+                      ),
+                      child: Text(
+                        'اقتراحات الكفالة',
+                        style: TextStyle(
+                          fontSize: SizeConfig.font16,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: ListView.separated(
+                        padding: EdgeInsets.only(left: 16, right: 16),
                         shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
+                        separatorBuilder:
+                            (context, index) => SizedBox(height: 10),
                         itemCount: children.length,
                         itemBuilder: (context, index) {
                           final child = children[index];
@@ -145,8 +165,8 @@ class DonationScreen extends StatelessWidget {
                           );
                         },
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),

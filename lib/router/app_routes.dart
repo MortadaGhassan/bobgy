@@ -1,18 +1,19 @@
 import 'package:algad_almushriq/providers/onboarding_provider.dart';
 import 'package:algad_almushriq/router/route_names.dart';
-import 'package:algad_almushriq/view/add_report_screen.dart';
+import 'package:algad_almushriq/view/home/custody_applying_screen.dart';
+import 'package:algad_almushriq/view/profile/add_report_screen.dart';
 import 'package:algad_almushriq/view/donation_screen.dart';
-import 'package:algad_almushriq/view/home_screen.dart';
-import 'package:algad_almushriq/view/login.dart';
+import 'package:algad_almushriq/view/home/home_screen.dart';
+import 'package:algad_almushriq/view/authentication/login.dart';
 import 'package:algad_almushriq/view/main_shell.dart';
 import 'package:algad_almushriq/view/news_screen.dart';
 import 'package:algad_almushriq/view/onboarding_screen.dart';
-import 'package:algad_almushriq/view/orphan_custody_programme_screen.dart';
-import 'package:algad_almushriq/view/profile_screen.dart';
-import 'package:algad_almushriq/view/register.dart';
+import 'package:algad_almushriq/view/home/orphan_custody_programme_screen.dart';
+import 'package:algad_almushriq/view/profile/profile_screen.dart';
+import 'package:algad_almushriq/view/authentication/register.dart';
 import 'package:algad_almushriq/view/sponsorship_screen.dart';
-import 'package:algad_almushriq/view/tech_support.dart';
-import 'package:algad_almushriq/view/terms_condetions.dart';
+import 'package:algad_almushriq/view/profile/tech_support.dart';
+import 'package:algad_almushriq/view/profile/terms_condetions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -101,6 +102,11 @@ class AppRoutes {
           name: RouteNames.orphanCustodyProgrammeScreen,
           path: '/orphanCustodyProgrammeScreen',
           builder: ((context, state) => OrphanCustodyProgrammeScreen()),
+        ),
+        GoRoute(
+          name: RouteNames.custodyApplyingScreen,
+          path: '/custodyApplyingScreen',
+          builder: ((context, state) => CustodyApplyingScreen()),
         ),
       ],
     );

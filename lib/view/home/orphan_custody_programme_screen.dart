@@ -1,9 +1,10 @@
+import 'package:algad_almushriq/router/route_names.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../utlis/size_config.dart';
-import '../utlis/widgets/advantages_of_cutody.dart';
-import '../utlis/widgets/kinds_of_custody.dart';
+import '../../utlis/size_config.dart';
+import '../../utlis/widgets/advantages_of_cutody.dart';
+import '../../utlis/widgets/kinds_of_custody.dart';
 
 class OrphanCustodyProgrammeScreen extends StatelessWidget {
   const OrphanCustodyProgrammeScreen({super.key});
@@ -92,7 +93,9 @@ class OrphanCustodyProgrammeScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(15),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      context.pushNamed(RouteNames.custodyApplyingScreen);
+                    },
                     child: Text(
                       'ابدا الان',
                       style: TextStyle(fontSize: SizeConfig.font18),

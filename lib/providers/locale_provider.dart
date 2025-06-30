@@ -10,7 +10,7 @@ class LocaleNotifier extends _$LocaleNotifier {
   @override
   Locale? build() {
     getLocale();
-    return null;
+    return Locale('ar');
   }
 
   Future<void> setLocale(Locale locale) async {
@@ -26,6 +26,8 @@ class LocaleNotifier extends _$LocaleNotifier {
     state =
         _localCode != null
             ? Locale(_localCode)
-            : WidgetsBinding.instance.platformDispatcher.locale;
+            : Locale(
+              WidgetsBinding.instance.platformDispatcher.locale.languageCode,
+            );
   }
 }

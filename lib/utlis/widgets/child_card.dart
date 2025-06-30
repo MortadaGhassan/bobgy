@@ -35,7 +35,6 @@ class ChildInfoCard extends StatelessWidget {
           side: BorderSide(color: context.colorScheme.primary),
         ),
       ),
-      elevation: WidgetStateProperty.all(10),
       fixedSize: WidgetStateProperty.all(Size(48, 38)),
       backgroundColor: WidgetStateProperty.all(context.colorScheme.primary),
       foregroundColor: WidgetStateProperty.all(Colors.white),
@@ -48,7 +47,7 @@ class ChildInfoCard extends StatelessWidget {
           width: 1.5,
         ),
       ),
-      elevation: 5,
+      elevation: 0,
       child: Stack(
         children: [
           Padding(
@@ -104,6 +103,7 @@ class ChildInfoCard extends StatelessWidget {
                         children: [
                           ElevatedButton(
                             style: style.copyWith(
+                              elevation: WidgetStatePropertyAll(0),
                               backgroundColor: WidgetStateProperty.all(
                                 context.colorScheme.onPrimary,
                               ),
@@ -116,7 +116,15 @@ class ChildInfoCard extends StatelessWidget {
                           ),
                           const SizedBox(width: 8),
                           ElevatedButton(
-                            style: style,
+                            style: style.copyWith(
+                              elevation: WidgetStatePropertyAll(0),
+                              backgroundColor: WidgetStateProperty.all(
+                                context.colorScheme.primary,
+                              ),
+                              foregroundColor: WidgetStateProperty.all(
+                                context.colorScheme.onPrimary,
+                              ),
+                            ),
                             onPressed: onSecondButtonPressed,
                             child: const Text("قبول"),
                           ),
