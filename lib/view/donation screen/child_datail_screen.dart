@@ -67,25 +67,59 @@ class ChildDatailScreen extends StatelessWidget {
                   ),
                   Column(
                     children: [
-                      Image.asset(
-                        width: 93.w,
-                        height: 20.h,
-                        'assets/images/1403223749f2922537c6b44743dc7f94f1635fb3.jpg',
-                        fit: BoxFit.fill,
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(12),
+                        child: Image.asset(
+                          width: double.infinity,
+                          height: 20.h,
+                          'assets/images/74cca0dcff25227fd27067f8f0d7cf115d589955.jpg',
+                          fit: BoxFit.fill,
+                        ),
                       ),
+                      const SizedBox(height: 8),
                       Row(
                         children: [
-                          Image.asset(
-                            width: 41.5.w,
-                            height: 20.h,
-                            'assets/images/1403223749f2922537c6b44743dc7f94f1635fb3.jpg',
-                            fit: BoxFit.fill,
+                          Expanded(
+                            child: Stack(
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(12),
+                                  child: Image.asset(
+                                    'assets/images/74cca0dcff25227fd27067f8f0d7cf115d589955.jpg',
+                                    fit: BoxFit.fill,
+                                    height: 15.h,
+                                  ),
+                                ),
+                                Container(
+                                  height: 15.h,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(12),
+                                    color: Colors.black.withValues(alpha: 0.4),
+                                  ),
+                                  alignment: Alignment.center,
+                                  child: const Text(
+                                    '+4',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                          Image.asset(
-                            width: 41.5.w,
-                            height: 20.h,
-                            'assets/images/1403223749f2922537c6b44743dc7f94f1635fb3.jpg',
-                            fit: BoxFit.fill,
+                          SizedBox(width: 2.w),
+
+                          Expanded(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.asset(
+                                'assets/images/74cca0dcff25227fd27067f8f0d7cf115d589955.jpg', // replace with your image
+                                fit: BoxFit.cover,
+                                height: 15.h,
+                              ),
+                            ),
                           ),
                         ],
                       ),
