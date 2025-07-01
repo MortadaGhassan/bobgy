@@ -43,12 +43,7 @@ class ChildDetailsCard extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                // CircleAvatar(
-                //   radius: 35,
-                //   child:
-                //   foregroundImage: AssetImage(imageUrl),
-                //   //  backgroundImage:NetworkImage(imageUrl) to be used with the api
-                // ),
+
                 const SizedBox(width: 15),
                 Expanded(
                   child: Column(
