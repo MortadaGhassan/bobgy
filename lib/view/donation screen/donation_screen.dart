@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hugeicons/hugeicons.dart';
 
-import '../router/route_names.dart';
+import '../../router/route_names.dart';
 
 class DonationScreen extends StatelessWidget {
   const DonationScreen({super.key});
@@ -130,49 +130,52 @@ class DonationScreen extends StatelessWidget {
                   topRight: Radius.circular(50),
                 ),
               ),
-              child: Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                        right: 16,
-                        top: 43,
-                        bottom: 10,
-                        left: 16,
-                      ),
-                      child: Text(
-                        'اقتراحات الكفالة',
-                        style: TextStyle(
-                          fontSize: SizeConfig.font16,
-                          fontWeight: FontWeight.w600,
-                        ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                      right: 16,
+                      top: 43,
+                      bottom: 10,
+                      left: 16,
+                    ),
+                    child: Text(
+                      'اقتراحات الكفالة',
+                      style: TextStyle(
+                        fontSize: SizeConfig.font16,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
-                    Expanded(
-                      child: ListView.separated(
-                        padding: EdgeInsets.only(left: 16, right: 16),
-                        shrinkWrap: true,
-                        separatorBuilder:
-                            (context, index) => SizedBox(height: 10),
-                        itemCount: children.length,
-                        itemBuilder: (context, index) {
-                          final child = children[index];
-                          return ChildInfoCard(
-                            name: child['name'] as String,
-                            state: child['state'] as String,
-                            location: child['location'] as String,
-                            imageUrl: child['image'] as String,
-                            age: child['age'] as int,
-                            icon: HugeIcons.strokeRoundedLocation01,
-                            onFirstButtonPressed: () {},
-                            onSecondButtonPressed: () {},
-                          );
-                        },
-                      ),
+                  ),
+                  Expanded(
+                    child: ListView.separated(
+                      padding: EdgeInsets.only(left: 16, right: 16),
+                      shrinkWrap: true,
+                      separatorBuilder:
+                          (context, index) => SizedBox(height: 10),
+                      itemCount: children.length,
+                      itemBuilder: (context, index) {
+                        final child = children[index];
+                        return ChildInfoCard(
+                          name: child['name'] as String,
+                          state: child['state'] as String,
+                          location: child['location'] as String,
+                          imageUrl: child['image'] as String,
+                          age: child['age'] as int,
+                          icon: HugeIcons.strokeRoundedLocation01,
+                          onFirstButtonPressed: () {
+                            context.pushNamed(
+                              RouteNames.childDetailsScreen,
+                              extra: child,
+                            );
+                          },
+                          onSecondButtonPressed: () {},
+                        );
+                      },
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
