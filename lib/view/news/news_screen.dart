@@ -136,38 +136,14 @@ class NewsScreen extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(right: 5, top: 12, bottom: 6),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "الاخبار",
-                              textDirection: TextDirection.rtl,
-                              style: TextStyle(
-                                fontSize: SizeConfig.font16,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            TextButton(
-                              onPressed: () {},
-                              style: TextButton.styleFrom(
-                                padding: EdgeInsets.zero,
-                                minimumSize: Size.zero,
-                                tapTargetSize:
-                                    MaterialTapTargetSize
-                                        .shrinkWrap, // Shrink touch area to content
-                              ),
-                              child: Text(
-                                "عرض المرزيد",
-                                textDirection: TextDirection.rtl,
-                                style: TextStyle(
-                                  fontSize: SizeConfig.font14,
-                                  fontWeight: FontWeight.w300,
-                                  color: Theme.of(context).colorScheme.primary,
-                                ),
-                              ),
-                            ),
-                          ],
+                        padding: EdgeInsets.only(right: 5, top: 12, bottom: 16),
+                        child: Text(
+                          "الاخبار",
+                          textDirection: TextDirection.rtl,
+                          style: TextStyle(
+                            fontSize: SizeConfig.font16,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                       ListView.separated(
