@@ -119,9 +119,9 @@ class SponsorshipScreen extends StatelessWidget {
             Row(
               children: [
                 CustodyNumbersCard(num: 16, state: 'اجمالي الكفالات'),
-                SizedBox(width: 10),
+                SizedBox(width: 0.9.w),
                 CustodyNumbersCard(num: 12, state: 'النشطة'),
-                SizedBox(width: 10),
+                SizedBox(width: 0.9.w),
                 CustodyNumbersCard(num: 4, state: 'المنتهية'),
               ],
             ),
