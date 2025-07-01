@@ -1,10 +1,11 @@
 import 'package:algad_almushriq/providers/onboarding_provider.dart';
 import 'package:algad_almushriq/router/route_names.dart';
+import 'package:algad_almushriq/view/donation%20screen/child_datail_screen.dart';
 import 'package:algad_almushriq/view/home/custody_applying_screen.dart';
 import 'package:algad_almushriq/view/news/topic_news_screen.dart';
 import 'package:algad_almushriq/view/notification_screen.dart';
 import 'package:algad_almushriq/view/profile/add_report_screen.dart';
-import 'package:algad_almushriq/view/donation_screen.dart';
+import 'package:algad_almushriq/view/donation%20screen/donation_screen.dart';
 import 'package:algad_almushriq/view/home/home_screen.dart';
 import 'package:algad_almushriq/view/authentication/login.dart';
 import 'package:algad_almushriq/view/main_shell.dart';
@@ -84,7 +85,15 @@ class AppRoutes {
             ),
           ],
         ),
-
+        GoRoute(
+          builder: (context, state) {
+            final child = state.extra as Map<String, dynamic>;
+            return ChildDatailScreen(child: child);
+          },
+          path: RouteNames.childDetailsScreen,
+          name: RouteNames.childDetailsScreen,
+          parentNavigatorKey: rootNavigatorKey,
+        ),
         GoRoute(
           name: RouteNames.onboardingScreen,
           path: '/onboardingScreen',

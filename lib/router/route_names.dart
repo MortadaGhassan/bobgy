@@ -14,4 +14,5 @@ class RouteNames {
   static final custodyApplyingScreen = '/custodyApplyingScreen';
   static final notificationScreen = '/notificationScreen';
   static final topicNewsScreen = '/topicNewsScreen';
+  static final childDetailsScreen = '/childDetailsScreen';
 }
