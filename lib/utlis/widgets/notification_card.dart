@@ -40,17 +40,10 @@ class NotificationCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    title,
-                    style: TextStyle(
-                      fontSize: SizeConfig.font16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
+                  Text(title, style: Theme.of(context).textTheme.bodyMedium),
                   Text(
                     'قبل $time دقائق',
-                    style: TextStyle(
-                      fontSize: SizeConfig.font16,
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                       fontWeight: FontWeight.w300,
                     ),
                   ),
@@ -58,10 +51,9 @@ class NotificationCard extends StatelessWidget {
               ),
               Text(
                 message,
-                style: TextStyle(
-                  fontSize: SizeConfig.font16,
-                  fontWeight: FontWeight.w300,
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.w300),
                 softWrap: true,
               ),
             ],

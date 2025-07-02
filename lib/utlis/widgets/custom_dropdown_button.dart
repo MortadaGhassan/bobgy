@@ -30,10 +30,9 @@ class _CustomDropdownButtonState extends State<CustomDropdownButton> {
         borderRadius: BorderRadius.circular(30),
         hint: Text(
           'التبرع بواسطة',
-          style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-            fontSize: SizeConfig.font18,
-            color: Color(0xff8b8c8d),
-          ),
+          style: Theme.of(
+            context,
+          ).textTheme.titleMedium!.copyWith(color: Color(0xff8b8c8d)),
         ),
         isExpanded: true,
         items:

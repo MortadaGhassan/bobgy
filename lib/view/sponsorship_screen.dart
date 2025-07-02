@@ -32,7 +32,6 @@ class SponsorshipScreen extends StatelessWidget {
           ],
         ),
       ),
-      backgroundColor: context.colorScheme.surface,
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         child: Column(
@@ -54,6 +53,8 @@ class SponsorshipScreen extends StatelessWidget {
                         ),
                         filled: true,
                         hintText: 'ابحث عن كفالة معينة',
+                        hintStyle: Theme.of(context).textTheme.labelSmall!
+                            .copyWith(fontSize: SizeConfig.font14),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(32.0)),
                           borderSide: BorderSide(
@@ -130,10 +131,7 @@ class SponsorshipScreen extends StatelessWidget {
               padding: EdgeInsets.only(right: 5, top: 12, bottom: 16),
               child: Text(
                 'التبرع الفوري',
-                style: TextStyle(
-                  fontSize: SizeConfig.font16,
-                  fontWeight: FontWeight.w600,
-                ),
+                style: Theme.of(context).textTheme.titleSmall,
               ),
             ),
             ListView.separated(
@@ -189,13 +187,7 @@ class CustodyState extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                name,
-                style: TextStyle(
-                  fontSize: SizeConfig.font16,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+              Text(name, style: Theme.of(context).textTheme.titleSmall),
               Text('مدة الكفالة : $custodyDuration اشهر'),
             ],
           ),

@@ -54,11 +54,9 @@ class NewsCard extends ConsumerWidget {
               left: 3.w,
               child: Text(
                 'Jan 3,2024',
-                style: TextStyle(
-                  fontSize: SizeConfig.font12,
-                  fontWeight: FontWeight.w800,
-                  color: context.colorScheme.onPrimary,
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.labelMedium!.copyWith(fontWeight: FontWeight.w800),
               ),
             ),
             Positioned(

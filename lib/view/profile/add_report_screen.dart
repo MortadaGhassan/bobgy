@@ -32,7 +32,6 @@ class _AddReportScreenState extends State<AddReportScreen> {
     }
 
     return Scaffold(
-      backgroundColor: context.colorScheme.surface,
       appBar: AppBar(
         flexibleSpace: Stack(
           fit: StackFit.expand,
@@ -69,10 +68,7 @@ class _AddReportScreenState extends State<AddReportScreen> {
                   padding: EdgeInsets.only(bottom: 1.h),
                   child: Text(
                     "الدعم الفني",
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.onPrimary,
-                      fontSize: SizeConfig.font18,
-                    ),
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                 ),
               ],

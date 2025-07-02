@@ -20,7 +20,6 @@ class _CustodyApplyingScreenState extends State<CustodyApplyingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
         flexibleSpace: Stack(
           fit: StackFit.expand,
@@ -57,10 +56,7 @@ class _CustodyApplyingScreenState extends State<CustodyApplyingScreen> {
                   padding: EdgeInsets.only(bottom: 1.h),
                   child: Text(
                     "برنامج الكفالة",
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.onPrimary,
-                      fontSize: SizeConfig.font18,
-                    ),
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                 ),
               ],

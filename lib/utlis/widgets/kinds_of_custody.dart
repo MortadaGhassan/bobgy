@@ -28,13 +28,7 @@ class KindsOfCustody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                '$title:',
-                style: TextStyle(
-                  fontSize: SizeConfig.font16,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
+              Text('$title:', style: Theme.of(context).textTheme.bodyMedium),
               Text(
                 content,
                 softWrap: true,

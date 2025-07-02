@@ -71,10 +71,7 @@ class ChildInfoCard extends StatelessWidget {
                           Expanded(
                             child: Text(
                               name,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                              ),
+                              style: Theme.of(context).textTheme.titleSmall,
                             ),
                           ),
                         ],

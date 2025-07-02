@@ -24,14 +24,7 @@ class NewsScreen extends StatelessWidget {
             right: 3.w,
             left: 3.w,
           ),
-          child: Text(
-            'الاخبار',
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-              fontSize: SizeConfig.font22,
-              fontWeight: FontWeight.w700,
-              color: Colors.white,
-            ),
-          ),
+          child: Text('الاخبار', style: Theme.of(context).textTheme.titleLarge),
         ),
         backgroundColor: Colors.transparent,
         actions: [
@@ -111,10 +104,7 @@ class NewsScreen extends StatelessWidget {
                     children: [
                       Text(
                         'اخبار اليوم',
-                        style: TextStyle(
-                          fontSize: SizeConfig.font18,
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style: Theme.of(context).textTheme.titleSmall,
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: 8, bottom: 16),
@@ -140,10 +130,7 @@ class NewsScreen extends StatelessWidget {
                         child: Text(
                           "الاخبار",
                           textDirection: TextDirection.rtl,
-                          style: TextStyle(
-                            fontSize: SizeConfig.font16,
-                            fontWeight: FontWeight.w600,
-                          ),
+                          style: Theme.of(context).textTheme.titleSmall,
                         ),
                       ),
                       ListView.separated(

@@ -57,9 +57,10 @@ class InstantDonationCard extends StatelessWidget {
                       children: [
                         Text(
                           'Bantubarengan',
-                          style: TextStyle(
+                          style: Theme.of(
+                            context,
+                          ).textTheme.labelMedium!.copyWith(
                             color: Color(0xff666D80),
-                            fontSize: SizeConfig.font12,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -83,18 +84,12 @@ class InstantDonationCard extends StatelessWidget {
                       children: [
                         Text(
                           'المبلغ المتبقي',
-                          style: TextStyle(
-                            fontSize: SizeConfig.font10,
-                            fontWeight: FontWeight.w400,
-                          ),
+                          style: Theme.of(context).textTheme.bodySmall,
                         ),
                         SizedBox(width: 3.h),
                         Text(
                           'المبلغ المستهدف',
-                          style: TextStyle(
-                            fontSize: SizeConfig.font10,
-                            fontWeight: FontWeight.w400,
-                          ),
+                          style: Theme.of(context).textTheme.bodySmall,
                         ),
                       ],
                     ),
@@ -105,26 +100,17 @@ class InstantDonationCard extends StatelessWidget {
 
                         Text(
                           '50,000 دع',
-                          style: TextStyle(
-                            fontSize: SizeConfig.font10,
-                            fontWeight: FontWeight.w400,
-                          ),
+                          style: Theme.of(context).textTheme.bodySmall,
                         ),
                         SizedBox(width: 7.h),
                         Text(
                           '450,000 دع',
-                          style: TextStyle(
-                            fontSize: SizeConfig.font10,
-                            fontWeight: FontWeight.w400,
-                          ),
+                          style: Theme.of(context).textTheme.bodySmall,
                         ),
                         Spacer(),
                         Text(
                           '92%',
-                          style: TextStyle(
-                            fontSize: SizeConfig.font10,
-                            fontWeight: FontWeight.w400,
-                          ),
+                          style: Theme.of(context).textTheme.bodySmall,
                         ),
                       ],
                     ),
@@ -148,8 +134,9 @@ class InstantDonationCard extends StatelessWidget {
                             keyboardType: TextInputType.numberWithOptions(),
                             style: TextStyle(),
                             decoration: InputDecoration(
-                              hintTextDirection: TextDirection.rtl,
                               hintText: 'ادخل المبلغ د,ع',
+                              hintStyle: Theme.of(context).textTheme.labelSmall!
+                                  .copyWith(fontSize: SizeConfig.font14),
                             ),
                           ),
                         ),
@@ -163,10 +150,7 @@ class InstantDonationCard extends StatelessWidget {
                           ),
                           child: Text(
                             'ادفع الان',
-                            style: TextStyle(
-                              fontSize: SizeConfig.font12,
-                              fontWeight: FontWeight.w500,
-                            ),
+                            style: Theme.of(context).textTheme.labelMedium,
                           ),
                         ),
                       ],

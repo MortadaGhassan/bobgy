@@ -7,11 +7,9 @@ class TermsConditionsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final titleStyle = Theme.of(context).textTheme.titleMedium?.copyWith(
-      color: Color(0xFF8a8c8d),
-      fontWeight: FontWeight.bold,
-      fontSize: 18,
-    );
+    final titleStyle = Theme.of(
+      context,
+    ).textTheme.titleMedium?.copyWith(color: Color(0xFF8a8c8d));
     final bodyStyle = Theme.of(context).textTheme.bodyMedium?.copyWith(
       height: 1.6,
       fontSize: 16,
@@ -51,15 +49,9 @@ class TermsConditionsScreen extends StatelessWidget {
                   Icons.arrow_back_ios_rounded,
                   color: Theme.of(context).colorScheme.onPrimary,
                 ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 1.h),
-                  child: Text(
-                    "الاحكام والشروط",
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.onPrimary,
-                      fontSize: SizeConfig.font18,
-                    ),
-                  ),
+                Text(
+                  "الاحكام والشروط",
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
               ],
             ),

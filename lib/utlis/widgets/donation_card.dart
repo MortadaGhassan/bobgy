@@ -50,10 +50,8 @@ class DonationCard extends StatelessWidget {
                   height: 3.h,
                   child: Text(
                     text,
-                    style: TextStyle(
-                      fontSize: SizeConfig.font12,
+                    style: Theme.of(context).textTheme.labelMedium!.copyWith(
                       fontWeight: FontWeight.w700,
-                      color: Colors.white,
                     ),
                   ),
                 ),

@@ -39,9 +39,8 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
                 padding: EdgeInsets.only(bottom: 1.h),
                 child: Text(
                   title,
-                  style: TextStyle(
-                    color: context.colorScheme.onPrimary,
-                    fontSize: SizeConfig.font18,
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    color: context.colorScheme.primary,
                   ),
                 ),
               ),

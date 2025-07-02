@@ -48,10 +48,7 @@ class NotificationScreen extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 1.h),
                   child: Text(
                     "برنامج الكفالة",
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.onPrimary,
-                      fontSize: SizeConfig.font18,
-                    ),
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                 ),
               ],
@@ -59,7 +56,6 @@ class NotificationScreen extends StatelessWidget {
           ),
         ),
       ),
-      backgroundColor: context.colorScheme.surface,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         child: ListView.separated(

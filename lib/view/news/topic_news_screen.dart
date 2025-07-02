@@ -48,10 +48,7 @@ class TopicNewsScreen extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 1.h),
                   child: Text(
                     "الاخبار",
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.onPrimary,
-                      fontSize: SizeConfig.font18,
-                    ),
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                 ),
               ],
@@ -98,10 +95,9 @@ class TopicNewsScreen extends StatelessWidget {
                     children: [
                       Text(
                         'نجاح حملة المنح الطلابيه:',
-                        style: TextStyle(
-                          fontSize: SizeConfig.font16,
-                          fontWeight: FontWeight.w800,
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           color: context.colorScheme.primary,
+                          fontWeight: FontWeight.w800,
                         ),
                       ),
                       SizedBox(height: 10),

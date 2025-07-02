@@ -2,6 +2,7 @@ import 'package:algad_almushriq/providers/locale_provider.dart';
 import 'package:algad_almushriq/router/route_names.dart';
 import 'package:algad_almushriq/theme/theme.dart';
 import 'package:algad_almushriq/utlis/size_config.dart';
+import 'package:algad_almushriq/utlis/widgets/tab_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -125,31 +126,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               leadingIcon: HugeIcons.strokeRoundedGlobe02,
 
               text: 'اللغة',
-              trailing: ToggleButtons(
-                isSelected: [!isEnglish, isEnglish],
-                borderRadius: const BorderRadius.all(Radius.circular(5)),
-                onPressed: (index) {
-                  setState(() {
-                    isEnglish = index == 1;
-                  });
-                  if (isEnglish) {
-                    ref
-                        .read(localeNotifierProvider.notifier)
-                        .setLocale(Locale('en'));
-                  } else {
-                    ref
-                        .read(localeNotifierProvider.notifier)
-                        .setLocale(Locale('ar'));
-                  }
-                },
-                selectedColor: Colors.white,
-                color: context.colorScheme.primary,
-                fillColor: context.colorScheme.primary,
-                borderColor: context.colorScheme.onPrimary,
-                selectedBorderColor: context.colorScheme.primary,
-                constraints: const BoxConstraints(minWidth: 67, minHeight: 24),
-                children: const [Text('عربي'), Text('English')],
-              ),
+              trailing: TabButton(),
             ),
             SizedBox(height: 16),
             Text('الدعم', style: TextStyle(fontSize: 16)),

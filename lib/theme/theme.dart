@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:algad_almushriq/utlis/size_config.dart';
 
 class MyTheme {
-  static const Color kBackgroundColor = Color(0xFFFFFFFF);
+  static const Color kBackgroundColor = Color(0xfff7f9fc);
   static const Color kPrimaryColor = Color(0xFF41A2D8);
   static const Color kTextColor = Color(0xFF000000);
   static const Color kCardColor = Color(0xFF2A2A2A);
@@ -31,14 +32,36 @@ class MyTheme {
       shadow: kShadeColor,
     ),
     iconTheme: const IconThemeData(color: kTextColor),
-    textTheme: const TextTheme(
-      bodyLarge: TextStyle(color: kTextColor, fontFamily: 'Cairo'),
-      bodyMedium: TextStyle(
+    textTheme: TextTheme(
+      titleLarge: TextStyle(
+        color: Colors.white,
+        fontWeight: FontWeight.w700,
+        fontSize: SizeConfig.font22,
+        fontFamily: 'Cairo',
+      ),
+      titleMedium: TextStyle(
+        color: Colors.white,
         fontWeight: FontWeight.w400,
-
+        fontSize: SizeConfig.font18,
+        fontFamily: 'Cairo',
+      ),
+      titleSmall: TextStyle(
+        color: Colors.black,
+        fontWeight: FontWeight.w600,
+        fontSize: SizeConfig.font16,
+        fontFamily: 'Cairo',
+      ),
+      bodyMedium: TextStyle(
+        fontWeight: FontWeight.w500,
         color: kTextColor,
         fontFamily: 'Cairo',
-        fontSize: 16,
+        fontSize: SizeConfig.font16,
+      ),
+      bodySmall: TextStyle(
+        fontWeight: FontWeight.w400,
+        color: kTextColor,
+        fontFamily: 'Cairo',
+        fontSize: SizeConfig.font10,
       ),
       labelLarge: TextStyle(
         fontSize: 24,
@@ -47,9 +70,15 @@ class MyTheme {
         fontFamily: 'Cairo',
       ),
       labelMedium: TextStyle(
-        fontSize: 20,
+        fontSize: 12,
         fontWeight: FontWeight.w500,
         color: Colors.white,
+        fontFamily: 'Cairo',
+      ),
+      labelSmall: TextStyle(
+        color: Color(0xff8b8c8d),
+        fontWeight: FontWeight.w400,
+        fontSize: SizeConfig.font16,
         fontFamily: 'Cairo',
       ),
     ),

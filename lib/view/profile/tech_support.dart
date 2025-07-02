@@ -48,10 +48,7 @@ class TechSupportScreen extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 1.h),
                   child: Text(
                     "الدعم الفني",
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.onPrimary,
-                      fontSize: SizeConfig.font18,
-                    ),
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                 ),
               ],

@@ -55,11 +55,7 @@ class DonationScreen extends StatelessWidget {
           ),
           child: Text(
             'تأكيد التبرع والكفالة',
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-              fontSize: SizeConfig.font22,
-              fontWeight: FontWeight.w700,
-              color: Colors.white,
-            ),
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
         backgroundColor: Colors.transparent,
@@ -142,10 +138,7 @@ class DonationScreen extends StatelessWidget {
                     ),
                     child: Text(
                       'اقتراحات الكفالة',
-                      style: TextStyle(
-                        fontSize: SizeConfig.font16,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: Theme.of(context).textTheme.titleSmall,
                     ),
                   ),
                   Expanded(

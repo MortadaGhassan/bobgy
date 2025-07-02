@@ -48,10 +48,7 @@ class OrphanCustodyProgrammeScreen extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 1.h),
                   child: Text(
                     "برنامج الكفالة",
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.onPrimary,
-                      fontSize: SizeConfig.font18,
-                    ),
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                 ),
               ],
@@ -59,7 +56,6 @@ class OrphanCustodyProgrammeScreen extends StatelessWidget {
           ),
         ),
       ),
-      backgroundColor: Theme.of(context).colorScheme.surface,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -98,7 +94,7 @@ class OrphanCustodyProgrammeScreen extends StatelessWidget {
                     },
                     child: Text(
                       'ابدا الان',
-                      style: TextStyle(fontSize: SizeConfig.font18),
+                      style: Theme.of(context).textTheme.titleMedium,
                     ),
                   ),
                 ),
@@ -128,10 +124,7 @@ class OrphanCustodyProgrammeScreen extends StatelessWidget {
                 ),
                 child: Text(
                   'انواع الكفالة',
-                  style: TextStyle(
-                    fontSize: SizeConfig.font16,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
               ),
             ),
@@ -197,10 +190,7 @@ class OrphanCustodyProgrammeScreen extends StatelessWidget {
                 ),
                 child: Text(
                   'مزايا الكفالة',
-                  style: TextStyle(
-                    fontSize: SizeConfig.font16,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
               ),
             ),

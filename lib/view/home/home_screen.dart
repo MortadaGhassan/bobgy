@@ -33,20 +33,9 @@ class HomeScreen extends ConsumerWidget {
             children: [
               Text(
                 AppLocalizations.of(context)!.userGreeting,
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                  fontSize: SizeConfig.font18,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.white,
-                ),
+                style: Theme.of(context).textTheme.titleMedium,
               ),
-              Text(
-                'ازهر خضير',
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontSize: SizeConfig.font22,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white,
-                ),
-              ),
+              Text('ازهر خضير', style: Theme.of(context).textTheme.titleLarge),
             ],
           ),
         ),
@@ -196,11 +185,8 @@ class HomeScreen extends ConsumerWidget {
                               left: 16,
                               child: Text(
                                 "ساهم الان",
-                                style: TextStyle(
-                                  fontSize: SizeConfig.font18,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.white,
-                                ),
+                                style: Theme.of(context).textTheme.titleMedium!
+                                    .copyWith(fontWeight: FontWeight.w700),
                               ),
                             ),
                             Positioned(
@@ -251,10 +237,7 @@ class HomeScreen extends ConsumerWidget {
                       padding: EdgeInsets.only(right: 5, top: 12, bottom: 6),
                       child: Text(
                         'التبرع الفوري',
-                        style: TextStyle(
-                          fontSize: SizeConfig.font16,
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style: Theme.of(context).textTheme.titleSmall,
                       ),
                     ),
                     Padding(
@@ -278,11 +261,7 @@ class HomeScreen extends ConsumerWidget {
                         children: [
                           Text(
                             "الاخبار",
-                            textDirection: TextDirection.rtl,
-                            style: TextStyle(
-                              fontSize: SizeConfig.font16,
-                              fontWeight: FontWeight.w600,
-                            ),
+                            style: Theme.of(context).textTheme.titleSmall,
                           ),
                           TextButton(
                             onPressed: () {},

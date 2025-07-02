@@ -30,10 +30,9 @@ class CustodyNumbersCard extends StatelessWidget {
           ),
           Text(
             state,
-            style: TextStyle(
-              fontSize: SizeConfig.font12,
-              fontWeight: FontWeight.w500,
-            ),
+            style: Theme.of(
+              context,
+            ).textTheme.labelMedium!.copyWith(color: Colors.black),
           ),
         ],
       ),
