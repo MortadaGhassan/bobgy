@@ -1,4 +1,5 @@
 import 'package:algad_almushriq/theme/theme.dart';
+import 'package:algad_almushriq/utlis/widgets/custome_textformfield.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hugeicons/hugeicons.dart';
@@ -12,13 +13,13 @@ class AuthScreen extends StatefulWidget {
 
 class _AuthScreenState extends State<AuthScreen> {
   final TextEditingController numberController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController rePasswordController = TextEditingController();
   bool isLoading = false;
   void registerUser() async {
     if (numberController.text.isEmpty ||
-        emailController.text.isEmpty ||
+        nameController.text.isEmpty ||
         passwordController.text.isEmpty ||
         rePasswordController.text.isEmpty) {
       ScaffoldMessenger.of(
@@ -58,53 +59,33 @@ class _AuthScreenState extends State<AuthScreen> {
               style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
             ),
             SizedBox(height: 54),
-            TextField(
-              controller: emailController,
-              decoration: InputDecoration(
-                prefixIcon: HugeIcon(
-                  icon: HugeIcons.strokeRoundedUser,
-                  color: context.colorScheme.primary,
-                ),
-                hintText: 'الاسم الكامل',
-              ),
+            CustomeTextFormField(
+              controller: nameController,
+              hintText: 'الاسم الكامل',
+              prefixIcon: HugeIcons.strokeRoundedUser,
             ),
             SizedBox(height: 16),
-            TextField(
-              controller: numberController,
+            CustomeTextFormField(
+              controller: nameController,
+              hintText: 'رقم الهاتف',
+              prefixIcon: HugeIcons.strokeRoundedCall,
               keyboardType: TextInputType.numberWithOptions(),
-              decoration: InputDecoration(
-                prefixIcon: HugeIcon(
-                  icon: HugeIcons.strokeRoundedCall,
-                  color: context.colorScheme.primary,
-                ),
-                hintText: 'رقم الهاتف',
-              ),
             ),
             SizedBox(height: 16),
-            TextField(
+            CustomeTextFormField(
               controller: passwordController,
+              hintText: 'كلمة المرور',
+              prefixIcon: HugeIcons.strokeRoundedCircleLock01,
               obscureText: true,
-              decoration: InputDecoration(
-                hintText: 'كلمة المرور',
-                prefixIcon: HugeIcon(
-                  icon: HugeIcons.strokeRoundedCircleLock01,
-                  color: context.colorScheme.primary,
-                ),
-              ),
             ),
-            const SizedBox(height: 20),
-            TextField(
+            SizedBox(height: 16),
+            CustomeTextFormField(
               controller: rePasswordController,
+              hintText: 'تأكيد كلمة المرور',
+              prefixIcon: HugeIcons.strokeRoundedCircleLock01,
               obscureText: true,
-              decoration: InputDecoration(
-                hintText: 'تأكيد كلمة المرور',
-                prefixIcon: HugeIcon(
-                  icon: HugeIcons.strokeRoundedCircleLock01,
-                  color: context.colorScheme.primary,
-                ),
-              ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 16),
             isLoading
                 ? const CircularProgressIndicator()
                 : ElevatedButton(

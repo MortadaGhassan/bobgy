@@ -1,5 +1,6 @@
 import 'package:algad_almushriq/router/route_names.dart';
 import 'package:algad_almushriq/theme/theme.dart';
+import 'package:algad_almushriq/utlis/widgets/custome_textformfield.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hugeicons/hugeicons.dart';
@@ -35,30 +36,19 @@ class _LoginScreenState extends State<LoginScreen> {
               style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
             ),
             SizedBox(height: 54),
-
-            TextField(
+            CustomeTextFormField(
               controller: emailController,
-              keyboardType: TextInputType.numberWithOptions(),
-              decoration: InputDecoration(
-                prefixIcon: HugeIcon(
-                  icon: HugeIcons.strokeRoundedCall,
-                  color: context.colorScheme.primary,
-                ),
-                hintText: 'رقم الهاتف',
-              ),
+              hintText: 'رقم الهاتف',
+              prefixIcon: HugeIcons.strokeRoundedCall,
             ),
             SizedBox(height: 16),
-            TextField(
-              controller: passwordController,
+            CustomeTextFormField(
               obscureText: true,
-              decoration: InputDecoration(
-                hintText: 'كلمة المرور',
-                prefixIcon: HugeIcon(
-                  icon: HugeIcons.strokeRoundedCircleLock01,
-                  color: context.colorScheme.primary,
-                ),
-              ),
+              hintText: 'كلمة المرور',
+              prefixIcon: HugeIcons.strokeRoundedCircleLock01,
+              controller: passwordController,
             ),
+
             const SizedBox(height: 16),
             isLoading
                 ? const CircularProgressIndicator()
