@@ -1,13 +1,20 @@
+import 'package:algad_almushriq/theme/theme.dart';
 import 'package:algad_almushriq/utlis/size_config.dart';
 import 'package:flutter/material.dart';
 
 class CustomeTextFormField extends StatelessWidget {
   final String hintText;
   final TextInputType? keyboardType;
+  final IconData? prefixIcon;
+  final TextEditingController? controller;
+  final bool obscureText;
   const CustomeTextFormField({
     super.key,
     required this.hintText,
     this.keyboardType,
+    this.prefixIcon,
+    this.controller,
+    this.obscureText = false,
   });
 
   @override
@@ -16,7 +23,9 @@ class CustomeTextFormField extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 6),
       height: 7.h,
       child: TextFormField(
+        obscureText: obscureText,
         decoration: InputDecoration(
+          prefixIcon: Icon(prefixIcon, color: context.colorScheme.primary),
           errorStyle: const TextStyle(height: 0, fontSize: 0),
           hintText: hintText,
           hintStyle: Theme.of(
@@ -47,6 +56,9 @@ class CustomeTextFormField extends StatelessWidget {
           ),
         ),
         keyboardType: keyboardType ?? TextInputType.text,
+        onChanged: (value) {
+          controller!.text = value;
+        },
         validator: (value) {
           if (value!.isEmpty) {
             return '';
