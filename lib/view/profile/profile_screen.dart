@@ -19,6 +19,104 @@ class ProfileScreen extends ConsumerStatefulWidget {
 class _ProfileScreenState extends ConsumerState<ProfileScreen> {
   bool isEnglish = true;
   bool isNotification = true;
+  void showLogoutDialog() {
+    showModalBottomSheet(
+      showDragHandle: false,
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      builder:
+          (context) => Padding(
+            padding: EdgeInsets.only(
+              left: 18,
+              right: 18,
+              top: 12,
+              bottom: kBottomNavigationBarHeight - 10,
+            ),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    width: 150,
+                    height: 6,
+                    decoration: BoxDecoration(
+                      color: context.colorScheme.onSurface.withAlpha(16),
+                      borderRadius: BorderRadius.circular(3),
+                    ),
+                  ),
+                  Image.asset(
+                    'assets/images/alert1.gif',
+                    fit: BoxFit.fill,
+                    alignment: Alignment.center,
+                  ),
+
+                  Text(
+                    'تسجيل الخروج',
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    'هل أنت متأكد أنك تريد تسجيل الخروج من حسابك',
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      color: Color(0xFF8a8c8d),
+                    ),
+                  ),
+                  const SizedBox(height: 24),
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(24),
+                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                        debugPrint('Logging out...');
+                      },
+                      child: const Text(
+                        'تسجيل الخروج',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Row(
+                    children: [
+                      const Icon(
+                        color: Color(0xFF8a8c8d),
+                        HugeIcons.strokeRoundedInformationCircle,
+                        size: 16,
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          'تسجيل الخروج لن يحذف بياناتك. يمكنك العودة في أي وقت.',
+                          style: const TextStyle(
+                            fontSize: 12,
+                            color: Color(0xFF8a8c8d),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -157,7 +255,9 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
             OptionCard(
               text: 'تسجيل الخروج',
               trailing: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  showLogoutDialog();
+                },
                 icon: Icon(Icons.arrow_forward_ios_rounded),
               ),
             ),
