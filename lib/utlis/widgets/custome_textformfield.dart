@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class CustomeTextFormField extends StatelessWidget {
   final String hintText;
   final TextInputType? keyboardType;
-  final IconData? prefixIcon;
+  final Widget? prefixIcon;
   final TextEditingController? controller;
   final bool obscureText;
   const CustomeTextFormField({
@@ -25,7 +25,7 @@ class CustomeTextFormField extends StatelessWidget {
       child: TextFormField(
         obscureText: obscureText,
         decoration: InputDecoration(
-          prefixIcon: Icon(prefixIcon, color: context.colorScheme.primary),
+          prefixIcon: prefixIcon,
           errorStyle: const TextStyle(height: 0, fontSize: 0),
           hintText: hintText,
           hintStyle: Theme.of(

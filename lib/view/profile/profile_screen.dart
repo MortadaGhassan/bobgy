@@ -211,7 +211,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                 activeColor: context.colorScheme.primary,
                 inactiveThumbColor: context.colorScheme.primary,
                 inactiveTrackColor: context.colorScheme.surface,
-                activeTrackColor: context.colorScheme.shadow,
+                activeTrackColor: context.colorScheme.surface,
                 onChanged: (val) {
                   setState(() {
                     isNotification = val;

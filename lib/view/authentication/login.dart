@@ -39,13 +39,19 @@ class _LoginScreenState extends State<LoginScreen> {
             CustomeTextFormField(
               controller: emailController,
               hintText: 'رقم الهاتف',
-              prefixIcon: HugeIcons.strokeRoundedCall,
+              prefixIcon: HugeIcon(
+                icon: HugeIcons.strokeRoundedCall,
+                color: context.colorScheme.primary,
+              ),
             ),
             SizedBox(height: 16),
             CustomeTextFormField(
               obscureText: true,
               hintText: 'كلمة المرور',
-              prefixIcon: HugeIcons.strokeRoundedCircleLock01,
+              prefixIcon: HugeIcon(
+                icon: HugeIcons.strokeRoundedCircleLock01,
+                color: context.colorScheme.primary,
+              ),
               controller: passwordController,
             ),
 
